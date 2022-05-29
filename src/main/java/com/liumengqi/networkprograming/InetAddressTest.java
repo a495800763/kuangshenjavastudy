@@ -6,8 +6,12 @@ import java.net.UnknownHostException;
 /**
  * 测试IP
  */
-public class Test {
+public class InetAddressTest {
     public static void main(String[] args) {
+        InetAddressFunction();
+    }
+
+    private static void InetAddressFunction() {
         try {
             InetAddress inetAddress1 = InetAddress.getByName("127.0.0.1");
             System.out.println(inetAddress1);
