@@ -1,4 +1,4 @@
-package com.liumengqi.networkprograming;
+package com.liumengqi.networkprograming.inetdemo;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
