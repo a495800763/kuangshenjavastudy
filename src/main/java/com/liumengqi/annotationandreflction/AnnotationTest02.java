@@ -1,4 +1,4 @@
-package com.liumengqi.annotation;
+package com.liumengqi.annotationandreflction;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
