@@ -16,8 +16,18 @@ public class DenamicObjectDemo {
         //Function1(c1);
         //Function2(c1);
         //Function3(c1);
+        Function4(c1);
 
-        //通过反射操作属性
+    }
+
+    /**
+     * 通过反射操作属性
+     * @param c1
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws NoSuchFieldException
+     */
+    private static void Function4(Class<?> c1) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
         User user4 = (User)c1.newInstance();
         //得到User类的name 属性
         Field name = c1.getDeclaredField("name");
