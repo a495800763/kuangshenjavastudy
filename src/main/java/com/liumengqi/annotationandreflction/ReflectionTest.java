@@ -71,4 +71,13 @@ class User{
     private String parseAge2Chinese(int age){
         return "test";
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", age=" + age +
+                '}';
+    }
 }

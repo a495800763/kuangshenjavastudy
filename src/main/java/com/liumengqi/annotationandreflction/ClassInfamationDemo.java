@@ -11,7 +11,7 @@ public class ClassInfamationDemo {
         Class<?> c1 = Class.forName("com.liumengqi.annotationandreflction.User");
 
 
-        c1=new User().getClass();
+        //c1=new User().getClass();
 
 
         //获取类的名字
