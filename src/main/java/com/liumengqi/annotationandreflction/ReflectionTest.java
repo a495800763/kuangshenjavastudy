@@ -67,4 +67,8 @@ class User{
     public void setAge(int age) {
         this.age = age;
     }
+
+    private String parseAge2Chinese(int age){
+        return "test";
+    }
 }
