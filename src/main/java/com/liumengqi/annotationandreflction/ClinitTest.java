@@ -17,7 +17,4 @@ public class ClinitTest {
     public static void main(String[] args) {
         System.out.println(Sub.B);
     }
-
-
-
 }
