@@ -63,10 +63,36 @@ action:submit后请求的目的地，通过【method】方式将input标签的�
         <button>提交文件</button>
     </p>
 
+
+
+<!--带初步验证功能的表单标签,提示格式不正确-->
+    <p>邮箱：
+        <input type="email" name="email">
+    </p>
+
+    <p>URL：
+        <input type="url" name="url">
+    </p>
+    <p>数字：
+        <!-- 最大值最小值，默认步长-->
+        <input type="number" name="number" max="100" min="0" step="10">
+    </p>
+
+    <p>滑块(音量)：
+        <input type="range" name="voice" min="0" max="100" step="2" >
+    </p>
+
+<!--    搜索框-->
+    <p>搜索框
+        <input type="search" name="search">
+    </p>
+
+
     <p>
         <input type="submit">
         <input type="reset">
     </p>
+
 
 
 </form>
