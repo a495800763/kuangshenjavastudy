@@ -13,8 +13,8 @@ action:submit后请求的目的地，通过【method】方式将input标签的�
 -->
 <form action="index.html" method="post">
     <!--    文本输入框-->
-    <p>用户名：<input type="text" name="userName" value="狂神好帅" maxlength="8" size="16"></p>
-    <p>密码： <input type="password" name="passWord"></p>
+    <p>用户名：<input type="text" name="userName" value="狂神好帅" readonly maxlength="8" size="16"></p>
+    <p>密码： <input type="password" name="passWord"  value="1234546"></p>
     <!--    单选框标签radio
     value:单选框选中后表示的值
     name :组，属性名，相同组的radio单选
@@ -86,6 +86,12 @@ action:submit后请求的目的地，通过【method】方式将input标签的�
     <p>搜索框
         <input type="search" name="search">
     </p>
+
+
+<!-- 增强鼠标可用性-->
+<!--    点击label文字后指针可以锁定到 label 的for 属性对应id的标签-->
+    <label for="mark">你点我试试</label>
+    <input type="text" id="mark">
 
 
     <p>
