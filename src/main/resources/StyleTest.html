@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试三种引入css的方式及优先级</title>
+
+    <!--链接式-->
+    <link rel="stylesheet" href="style/mycss.css">
+    <style>
+        h1{
+            color: blue;
+        }
+
+        /*导入式*/
+        @import url("style/mycss.css");
+    </style>
+
+</head>
+<body>
+<!--优先级： 行内 > 就近原则{head中定义的内部样式和引入的外部样式哪个更在下方，就使用哪个} -->
+<!--使用行内样式定义style-->
+<h1 style="color: red">这是一个需要添加CSS样式的标题</h1>
+<h1>这是第二个需要添加CSS样式的标题</h1>
+</body>
+</html>
