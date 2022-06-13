@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构伪类选择器练习</title>
+<!--    避免使用class和id选择器-->
+    <style>
+        /*ul的第一个li子元素*/
+        ul li:first-child{
+            background: chocolate;
+        }
+
+
+
+        /*ul的最后一个li子元素*/
+        ul li:last-child{
+            background:darkgreen;
+        }
+
+        /*选中p：定位到父元素，选择其当前的第n个子元素，且必须这第n个子元素是p，如果不是则不生效*/
+       p:nth-child(2){
+            background: #ff008a;
+        }
+       /*当前代码中 p:nth-child(1) 不生效，因为p标签的父标签body 的第一个子元素是h标签；
+                  p:nth-child(2) 生效，<p>第一层的p1</p> 显式其颜色，#ff008a;
+                  p:nth-of-type(2) 生效，<p>第一层的p2</p> 显式其颜色，cornflowerblue
+       */
+
+        /*选中p：定位到父元素，选择其第n个类型为p的标签*/
+        p:nth-of-type(2){
+            background: cornflowerblue;
+        }
+
+        /*
+        hover：鼠标悬停时；a标签在鼠标悬停时的style
+        */
+        a:hover{
+            background: cadetblue;
+        }
+    </style>
+</head>
+<body>
+<!--伪类选择器：以冒号(:)引出的选择器，常常是一些active动词或者是逻辑谓词-->
+<!--结构伪类选择器：伪类选择器中通过谓词定位到具体结构中的标签的选择器-->
+<h1>标题</h1>
+<p>第一层的p1</p>
+<p>第一层的p2</p>
+<p>第一层的p3</p>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+</ul>
+<a href="">测试hover伪类选择器</a>
+</body>
+</html>
