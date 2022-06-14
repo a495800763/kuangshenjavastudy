@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*默认状态下*/
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+
+        /*
+        注释：为了产生预期的效果，在 CSS 定义中，a:hover 必须位于 a:link 和 a:visited 之后！！
+
+        注释：为了产生预期的效果，在 CSS 定义中，a:active 必须位于 a:hover 之后！！
+        */
+        /*鼠标悬停状态下*/
+        /*未访问状态*/
+        a:link{
+            color: hotpink;
+        }
+        /*未访问状态*/
+        a:visited{
+            color:#000000 ;
+        }
+        a:hover{
+            color: orange;
+        }
+        /*鼠标单击但未释放状态下*/
+        a:active{
+            color: cornflowerblue;
+        }
+        /*
+        文字阴影：text-shadow(阴影颜色，水平偏移，垂直偏移，阴影效果强度)
+        */
+        #price{
+            text-shadow: blue 5px 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<a href="#">
+    <img src="../images/timg.jpg" width="100px" height="100px" alt="">
+</a>
+<p>
+    <a href="#">java必知必会</a>
+</p>
+<p>
+    <a href="#">作者：</a>
+</p>
+<p>
+    <a href="#">柳梦琦</a>
+</p>
+<p>
+    <a href="#">价格：</a>
+</p>
+<p>
+    <a href="#" id="price">99元</a>
+</p>
+
+
+</body>
+</html>
