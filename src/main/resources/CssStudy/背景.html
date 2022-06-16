@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        div{
+            width:1000px;
+            height:700px;
+            border: 1px solid red;/*边框:大小(1px); 样式（实线）; 颜色（红色）*/
+            background-image: url("../images/girl.jpg");/*背景图片，默认平铺*/
+        }
+        .div1{
+            background-repeat: repeat-x; /*只在x轴平铺一行*/
+        }
+        .div2{
+            background-repeat: repeat-y;/*只在y轴平铺一列*/
+        }
+        .div3{
+            background-repeat: no-repeat;/*不平铺*/
+        }
+
+    </style>
+</head>
+<body>
+<!--背景颜色，背景图片-->
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+</body>
+</html>
