@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #content{
+            width:200px;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            font-size: 12px;
+            line-height: 25px;
+            border: 1px #000 solid;
+        }
+        ul,li{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        /*li的父级元素ul 相对定位*/
+        #content ul{
+            position:relative;
+        }
+        .tipText,.tipBg{
+            position: absolute;
+            width:200px;/*与content同宽*/
+            height: 25px;
+            top: 179px;/*调整tip及其背景至图片的下边缘对其*/
+        }
+        .tipText{
+            color: white;
+            z-index: 999;/*设置zindex至999层，保证不会被相同位置的tipBg遮挡*/
+        }
+        .tipBg{
+            background: #000;
+            opacity: 0.5;/*背景透明度:透出下层图片*/
+            filter: alpha(opacity=50);
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li><img src="../images/girl.jpg" alt=""></li>
+        <li class="tipText">学习微服务，找柳梦琦</li>
+        <li class="tipBg"></li>
+        <li>时间：2099-01-01</li>
+        <li>地点:火星五号基地</li>
+    </ul>
+</div>
+</body>
+</html>
