@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        div{
+            margin: 10px;
+            padding: 5px;
+        }
+        #father{
+            border: 1px #000 solid;
+        }
+
+        .layer01{
+            border: 1px #F00 dashed;
+            display: inline-block;
+            float: right;
+        }
+        .layer02{
+            border: 1px #00F dashed;
+            display: inline-block;
+        }
+        .layer03{
+            border: 1px #060 dashed;
+            display: inline-block;
+            float: right;
+        }
+        .layer04{
+            border: 1px #666 dashed;
+            font-size: 12px;
+            line-height: 23px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="father">
+    <div class="layer01"><img src="../images/girl.jpg" alt=""></div>
+    <div class="layer02"><img src="../images/arrow_down.png" alt=""></div>
+    <div class="layer03"><img src="../images/Chevron-down.png" alt=""></div>
+    <div class="layer04">
+        浮动的盒子可以向左浮动，也可以向右浮动，直到它的外边缘碰到包含框或者另外一个浮动盒子为止
+    </div>
+</div>
+</body>
+</html>
