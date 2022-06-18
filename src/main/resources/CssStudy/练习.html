@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*相对位置具体便宜量px可以到浏览器中动态调整至合适在写入css固定*/
+        div{
+            margin: 0;
+            padding: 0;
+        }
+        #father{
+            border: 2px solid pink;
+            width:320px;
+            height: 320px;
+        }
+        #div1{
+            width:100px;
+            height: 100px;
+            margin-top: 10px;
+            margin-left: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+        #div2{
+            width:100px;
+            height: 100px;
+            margin-top: 10px;
+            display: inline-block;
+            position:relative;
+            left:95px;
+            text-align: center;
+        }
+        #div3{
+            width:100px;
+            height: 100px;
+            margin-top: 10px;
+            margin-left: 10px;
+            display: inline-block;
+            position:relative;
+            top:90px;
+            text-align: center;
+        }
+        #div4{
+            width:100px;
+            height: 100px;
+            margin-left: 10px;
+            display: inline-block;
+            position:relative;
+            left:85px;
+            top:90px;
+            text-align: center;
+        }
+        #div5{
+            width:100px;
+            height: 100px;
+            display: inline-block;
+            position:relative;
+            left:110px;
+            top:-110px;
+            text-align: center;
+        }
+        .mydiv{
+            background: #ff94f1;;
+        }
+        .mydiv:hover{
+            background: #3862ff;
+        }
+
+        a{
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+ <div id="father">
+
+     <div class="mydiv" id="div1"><a href="#">链接1</a></div>
+     <div class="mydiv" id="div2"><a href="#">链接2</a></div>
+     <div class="mydiv" id="div3"><a href="#">链接3</a></div>
+     <div class="mydiv" id="div4"><a href="#">链接4</a></div>
+     <div class="mydiv" id="div5"><a href="#">链接5</a></div>
+ </div>
+</body>
+</html>
