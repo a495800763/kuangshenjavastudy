@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 10000px;
+        }
+        div:nth-of-type(1){
+            /*第一个div使用绝对定位:父级元素为设置position时，相对浏览器进行偏移*/
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            /**
+            偏移至右下角
+             */
+            right: 0;
+            bottom: 0;
+        }
+        div:nth-of-type(2){
+            /*第一个div使用固定定位:设置在浏览器某处， 不随滑动条变化，例子：返回顶部按钮等*/
+            width: 50px;
+            height: 50px;
+            background: yellow;
+            position: fixed;/*固定定位*/
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+</body>
+</html>
