@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*一般的标签选择器：选择所有P标签*/
+        /*p{*/
+        /*    background: greenyellow;*/
+        /*}*/
+        /*后代选择器 选择body标签下级的所有p标签,可在所有后代中跨辈选择*/
+        body p{
+            background: orangered;
+        }
+        /*后代选择器 选择ul标签下级的所有p标签*/
+        ul p{
+            background: blueviolet;
+        }
+        /*子选择器：只在后一代中选择目标*/
+        body>p{
+            background: #3e7fcd;
+        }
+        /*相邻兄弟选择器：在同一辈中选则后面第一个目标*/
+        .active + p{
+            font-size: xx-large;
+        }
+        /*通用兄弟选择器：在同一辈中选则后面所有目标*/
+        .active ~ p{
+           background: chocolate;
+        }
+    </style>
+</head>
+<body>
+<p>第一层的p0</p>
+<p class="active">第一层的p1</p>
+<p>第一层的p2</p>
+<p>第一层的p3</p>
+<ul>
+    <li>
+        <p>第三层的p4</p>
+    </li>
+    <li>
+        <p>第三层的p5</p>
+    </li>
+    <li>
+        <p>第三层的p6</p>
+    </li>
+</ul>
+<p>第一层的p7</p>
+<p>第一层的p8</p>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+</head>
+<style>
+    .demo a{
+        float: left;
+        display: block;
+        height:50px;
+        width: 50px;
+        border-radius: 10px;/*圆角边框*/
+        background: #2700ff ;
+        text-align: center;/*字体居中*/
+        color: gainsboro;
+        text-decoration: none;/*去掉标签下划线*/
+        margin-right: 5px;/*盒子模型中距离右边框5px*/
+        font: bold 20px/50px Arial ; /*字体加粗，字体大小，字体类型*/
+    }
+    /* 选中存在id的元素*/
+    a[id]{
+        background: yellow;
+    }
+
+    /* 正则匹配中= 表示完全相同 */
+    a[class="links item"]{
+        background: indianred;
+    }
+
+    /* 正则匹配中 *= 包含 */
+    a[class*="links"]{
+        background: deeppink;
+    }
+
+    /* 正则匹配中 ^=  表示以此开头 */
+    a[href^="../"]{
+        background: blueviolet;
+    }
+
+    /* 正则匹配中 $=  表示以此结尾 */
+    a[href$="doc"]{
+        background: greenyellow;
+    }
+
+
+
+
+</style>
+<body>
+<p class="demo">
+    <a href="http://www.baidu.com" class="links item first" id="first">1</a>
+    <a href="" class="links item active " target="_blank" title="test">2</a>
+    <a href="../images/timg.jpg" class="links item">3</a>
+    <a href="../images/timg.html" class="links item">4</a>
+    <a href="../images/timg.png" class="links item">5</a>
+    <a href="abc" class="links item">6</a>
+    <a href="/a.pdf" class="links item">7</a>
+    <a href="/abc.pdf" class="links item">8</a>
+    <a href="abc.doc" class="links item">9</a>
+    <a href="abcd.doc" class="links item last">10</a>
+
+
+
+
+
+</p>
+</body>
+</html>

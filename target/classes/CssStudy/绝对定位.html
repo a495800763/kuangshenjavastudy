@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 10px;
+            padding: 5px;
+            font-size: 12px;
+            font-weight: bold ;
+            line-height: 25px;
+        }
+        #father{
+            border: 1px #666 solid;
+            padding: 0;
+            position: relative;
+        }
+        #first{
+            border: 1px #ff6421 dashed;
+            background: #22c4ff;
+        }
+        #second{
+            border: 1px #3eff83 dashed;
+            background: #ff1822;
+            position: absolute;
+            /*绝对定位方式:
+            1 父级元素没有设置position 的情况下，相对于body进行偏移
+            2 父级元素存在position设置时，相对其父级元素进行偏移
+            3 在父级元素范围内移动，
+            与相对定位的区别：绝对定位偏移后，其位置不在标准文档流中，类似float,原来的位置不会被保留
+            */
+            right:-30px;
+        }
+        #third{
+            border: 1px #3f76f7 dashed;
+            background: #17ff3b;
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+    <div id="first">第一个盒子</div>
+    <div id="second">第二个盒子</div>
+    <div id="third">第三个盒子</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        div{
+            margin: 10px;
+            padding: 5px;
+        }
+        #father{
+            border: 1px #000 solid;
+        }
+
+        .layer01{
+            border: 1px #F00 dashed;
+            display: inline-block;
+            float: right;
+        }
+        .layer02{
+            border: 1px #00F dashed;
+            display: inline-block;
+            float:right;
+        }
+        .layer03{
+            border: 1px #060 dashed;
+            display: inline-block;
+            float: right;
+        }
+        /*
+        clear right 本身可以是float元素，但是【右侧】不允许有浮动元素，有的话另起一行
+        clear left 本身可以是float元素，但是【左侧】不允许有浮动元素，有的话另起一行
+        clear both 本身可以是float元素，但是【两侧都】不允许有浮动元素，有的话另起一行
+        但是clear 还是不能解决父级边框塌陷的问题
+        */
+        .layer04{
+            border: 1px #666 dashed;
+            font-size: 12px;
+            line-height: 23px;
+            display: inline-block;
+            float:right;
+            clear:both;
+        }
+        .clear{
+            margin: 0;
+            padding: 0;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+<div id="father">
+<!--    浮动的元素脱离所在父级块元素，因此可能导致父级块的边框塌陷-->
+    <div class="layer01"><img src="../images/girl.jpg" alt=""></div>
+    <div class="layer02"><img src="../images/arrow_down.png" alt=""></div>
+    <div class="layer03"><img src="../images/Chevron-down.png" alt=""></div>
+    <div class="layer04">
+        浮动的盒子可以向左浮动，也可以向右浮动，直到它的外边缘碰到包含框或者另外一个浮动盒子为止
+    </div>
+<!--   1 解决浮动导致的父级边框塌陷的标准写法：
+在塌陷的父级 的下方加一个div 定义这个div的clear:both 特性
+此时无论此前产生塌陷的父级边框中的子元素如何浮动，均被包裹在父级边框中，即消除了【父级边框塌陷】
+-->
+    <div class="clear"></div>
+<!--   方法2  或者在父级元素中增加 overflow:hidden 属性-->
+    <!--   方法3  或者在父级元素中增加伪类 after-->
+<!--
+#father:after{
+content:''
+display:block;
+clear:both
+}
+此方法即通过伪类的方式实现方法1，而不需要在页面上新增div
+-->
+</div>
+</body>
+</html>
