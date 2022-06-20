@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //字符串中引号嵌套的内外不一致规则
+        var str1 ='我是一个"高富帅"的程序员'
+        console.log(str1);
+        var str2 ="我是一个'高富帅'的程序员"
+        console.log(str2);
+        //转义符，换行等等
+        var str3 ="我是\b一个'高富帅'\n的程序员"
+        console.log(str3);
+        //字符串的长度 length
+        var str="my name is liumengqi";
+        //长度包括空格  length = 20
+        console.log(str.length);
+        var str4="my name is 柳梦琦";
+        //长度包括空格 一个英文字符为一个长度，一个汉字也为一个长度
+        console.log(str4.length);
+        // 字符串的拼接，只要字符串类型参与拼接，最后的结果一定是字符串类型，且会将其他类型转成字符串
+        console.log('柳梦琦'+'今年二十七岁');
+        console.log('liumengqi'+18);
+        console.log('liumengqi'+true);
+        console.log(12+12);
+        console.log('12'+12);
+        //加号的从左到右顺序 '12'+12+12='1212'+12='121212'
+        console.log('12'+12+12);
+        //减号不同于加号，结果为0
+        console.log('12'-12);
+        console.log('12'+Infinity);
+        console.log('12'+undefined);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
