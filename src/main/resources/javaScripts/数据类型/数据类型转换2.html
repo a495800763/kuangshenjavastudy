@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var age = prompt("请输入您的年龄：");
+        console.log(age);
+        console.log(typeof age);
+        console.log("********************************");
+        //使用parseInt 进行转换
+        var ageInt = parseInt(age);
+        console.log(ageInt);
+        console.log(typeof ageInt);
+        console.log("********************************");
+        //使用parseFloat 进行转换
+        //parseInt在转换浮点型数字字符串时 ，只保留整数部分
+        console.log(parseInt('3.14'));
+        console.log(parseInt('3.94'));
+        //parseFloat可以正常转换浮点数，仍是number 类型
+        var floatValue = parseFloat('3.94');
+        console.log(floatValue);
+        console.log(typeof floatValue);
+        //parseFloat 转换的字符串时整数时，不会产生小数点
+        var floatValue2 = parseFloat('3');
+        console.log(floatValue2);
+        console.log(typeof floatValue2);
+        console.log("********************************");
+        //字符以数字开头时，转换会自动去掉第一个非数字起至结尾的所有其他字符串
+        console.log(parseInt('120px'));
+        console.log(parseInt('120@163.com'));
+        //字符以非数字开头时，转换得到NaN
+        console.log(parseInt('rem120px'));
+        console.log("********************************");
+        var str = "123123";
+        console.log(str);
+        console.log(typeof str);
+        var floatValue2 = Number(str);
+        console.log(floatValue2);
+        console.log(typeof floatValue2);
+        console.log("********************************");
+        var currentValue="asdasas";
+        //非数字字符串转换成NaN
+        console.log(parseInt(currentValue));
+        console.log(parseFloat(currentValue));
+        console.log(Number(currentValue));
+        // - * / 三种符号可以实现隐式转换
+        console.log('12'-4);
+        console.log(12-'4');
+        console.log('12'-'4');
+        console.log('12'/4);
+        console.log('12'/'4');
+        console.log(12/'4');
+        console.log('12'*4);
+        console.log('12'*'4');
+        console.log(12*'4');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
