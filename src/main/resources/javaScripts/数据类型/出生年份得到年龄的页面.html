@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        while(true){
+            var birthYearStr = prompt("请输入您的出生年份：");
+            var birthYearNum = parseInt(birthYearStr);
+            if(typeof birthYearNum == 'number'&&!Number.isNaN(birthYearNum)){
+                var age = 2022-birthYearNum;
+                alert("您的年龄是："+age);
+            }else{
+                alert("请正确输入您的年龄");
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
