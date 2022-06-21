@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-
+        var num =18865;
+        console.log(num);
+        console.log(typeof  num);
+        console.log("===================================");
+        //toString(),方式转换成string类型
+        var str = num.toString();
+        console.log(str);
+        console.log(typeof  str);
+        console.log("===================================");
+        //String(value) 方式转换成string 类型
+        var str2 = String(num);
+        console.log(str2);
+        console.log(typeof  str2);
+        console.log("===================================");
+        //"+"法拼接字符串的方式完成转换
+        var strNew = num+'';
+        console.log(strNew);
+        //加上'' 拼接不会产生多余的字符长度
+        console.log(strNew.length);
+        console.log(typeof  strNew);
     </script>
 </head>
 <body>
