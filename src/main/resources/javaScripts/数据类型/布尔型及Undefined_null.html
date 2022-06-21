@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var flag = true;
+        console.log(typeof  flag);
+        console.log(!flag);
+        //布尔型true参与数字型运算时，当做1处理
+        console.log(flag+4);
+        console.log(!flag-5);
+        console.log("----------");
+        //仅声明一个变量而不赋值，其类型为Undefined
+        var str;
+        //赋值为undefined 的变量类型也是Undefined
+        var temp= undefined;
+        console.log(typeof  str);
+        console.log(typeof  temp);
+        console.log("----------");
+        var result = str+flag;
+        console.log(typeof  result);
+        console.log(result);
+
+        //undefined与字符串相加变成字符串
+        console.log(str+"liumengqi");
+        //undefined与数字相加得NaN
+        console.log(str+3333);
+
+        //空值
+        var space = null;
+        console.log(space+"liumengqi");
+        console.log(space);
+        //空值与数字相加仍是原数字，注意与undefined值与数字相加 相区别
+        console.log(space+1);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

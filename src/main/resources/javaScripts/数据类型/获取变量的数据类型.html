@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var num = 10;
+        console.log(typeof  num);
+        var str = 'pink';
+        console.log(typeof  str);
+        var flag = true;
+        console.log(typeof  flag);
+        var vari = undefined;
+        console.log(typeof  vari);
+        //null 值得类型是object
+        var temp = null;
+        console.log(typeof  temp);
+        //prompt 取过来的值一定是string类型
+        var current = prompt("请输入年龄");
+        console.log(current);
+        console.log(typeof current);
+        if(typeof current==="string"){
+            console.log("是string 类型");
+            //字符串转数字
+            var numa = Number(current);
+            console.log(numa);
+            console.log(typeof numa);
+        }else if(typeof current==="number"){
+            console.log("是number 类型");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
