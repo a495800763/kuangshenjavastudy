@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*逻辑与的短路操作：
+         1 &&  2 时：
+         如果 表达式1 的值为true
+         则返回表达式2的结果
+         如果表达式1 的值为false
+         则返回表达式1 的结果
+        * */
+        var result = 123 && 456;
+        console.log(result);// 结果为 456，456 参与 逻辑运算时 被当成true 计算，但是输出时仍是456
+        var resultNew = 0&& 456;
+        console.log(resultNew);// 结果为 0
+
+        /*逻辑或的短路操作：
+        1 ||  2 时：
+        如果 表达式1 的值为true
+        则返回表达式1的结果
+        如果表达式1 的值为false
+        则返回表达式2 的结果
+       * */
+        var result = 123 || 456;
+        console.log(result);// 结果为 123，123 参与 逻辑运算时 被当成true 计算，但是输出时仍是123
+        var resultNew = 0|| 456;
+        console.log(resultNew);// 结果为 456
+        console.log(0||456||12313*4126123);
+        var num= 0;
+        console.log(123||num++);//由于逻辑短路，num++ 表达式未被执行，num=0
+        console.log(num)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
