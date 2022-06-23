@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var value = '2';
+        //注意： swicth对value和case 进行匹配时， 必须满足value===case ,才进入分支
+        switch (value) {
+            case 2:
+                alert('值是数字类型的2');
+                break;
+            case '2':
+                alert('值是字符类型的2');
+                break;
+            default:
+                break;
+        }
+        /*switch case 穿透现象： 如果匹配的case 没有break做结尾，则继续执行后续所有的case
+        直到遇到break跳出分支，或者全部执行
+         */
+        var temp = 2;
+        switch (temp) {
+            case 1:
+                console.log("分支一");
+                break;
+            case 2:
+                console.log("分支二");
+            case 3:
+                console.log("分支三");
+            case 4:
+                console.log("分支四");
+                break;
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
