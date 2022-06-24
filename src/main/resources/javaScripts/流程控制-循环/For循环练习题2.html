@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var num = prompt("请输入学生人数：")
+        var sum = 0;
+        //num虽然是string类型，但是在逻辑操作符中可以进行隐式转换
+        for (var i = 1; i <= num; i++) {
+            //string类型与sum 相加，必须吧输入的string 类型转成number类型
+            sum += Number(prompt("请输入第" + i + "个学生的成绩："));
+        }
+        var average = sum / num;
+        alert("本班级学生的总成绩是：" + sum)
+        alert("本班级学生的平均成绩是：" + average)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
