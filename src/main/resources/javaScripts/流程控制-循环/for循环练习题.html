@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环测试题</title>
+</head>
+<style>
+    input {
+        font-weight: bold;
+        color: white;
+        background-color: deepskyblue;
+        border: white;
+        /*width: 60px;*/
+        /*height: 30px;*/
+        border-radius: 5px;
+    }
+
+    input:hover {
+        background-color: #77ff4f;
+    }
+
+    .resultDiv {
+        margin-top: 10px;
+    }
+</style>
+<body>
+<div>
+    <input type="button" onclick="test1()" value="练习题1">
+    <input type="button" onclick="test2()" value="练习题2">
+    <input type="button" onclick="test3()" value="练习题3">
+</div>
+<div class="resultDiv">
+    <textarea name="resultTextArea" id="rta" cols="30" rows="10"></textarea>
+</div>
+<script type="text/javascript">
+    function test1() {
+        var result = 0;
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        result = sum / 100;
+        document.getElementById("rta").innerHTML = ('第一题的答案：' + result);
+    }
+
+    function test2() {
+        var result1 = 0;
+        var result2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if(i%2==0){
+                result2+=i;
+            }else{
+                result1+=i;
+            }
+        }
+        document.getElementById("rta").innerHTML =
+            '第二题的答案：'+"\n奇数和："+result1+"\n偶数和："+result2;
+    }
+
+    function test3() {
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if(i%3==0){
+                sum+=i;
+            }
+        }
+        document.getElementById("rta").innerHTML = '第三题的答案：'+sum;
+    }
+</script>
+</body>
+</html>
