@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 冒泡排序</title>
+    <script>
+        //每轮将数组中的相邻数字两两比较，交换大小位置，最终结果第i轮结束后 第i大的数据被冒泡到数组的后数第i个位置上
+        var arr = [5, 4, 8, 3, 7, 9, 6, 2, 1];
+        for (var i = 0; i < arr.length; i++) {
+            var tail = arr.length - i;
+            for (var j = 0; j < tail; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        console.log(arr)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
