@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //函数即是将一段需要重复执行的代码逻辑进行封装，在调用时，传入参数替换到实际代码中变成实际执行的代码
+        function getSum(start,end){
+            var sum =0;
+            for(var i = start;i<=end;i++){
+                sum+=i;
+            }
+            return sum;
+        }
+
+        console.log(getSum(1,100));
+        console.log(getSum(2001,36502));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
