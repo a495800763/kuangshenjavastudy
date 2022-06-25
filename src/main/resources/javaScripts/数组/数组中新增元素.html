@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//1 通过修改数组length属性，改变数组长度
+			var arr = ['blue', 'red', 'yellow'];
+			console.log(arr.length) //length=3
+			arr.length = 5; //手动修改数组长度是5
+			console.log(arr);
+			console.log(arr[3]); //数组扩容后，默认值 undefined
+			console.log(arr[4]); //数组扩容后， 默认值 undefined
+
+			arr.length = 2; //减少该数组的长度
+			console.log(arr); //减少后仅从头开始保留原数组中的现长度的数组
+			
+			//2 直接通过追加超过长度的索引增加元素
+			var array = ['blue', 'red', 'yellow'];
+			console.log(array);
+			console.log(array.length);//长度为3
+			array[3]='pink';
+			console.log(array); //在数据的第四个索引位置增加元素
+			array[6]='black';
+			 //在数据的第7个索引位置增加元素，中间空余的元素默认值是undefined
+			console.log(array[4]);
+			console.log(array[5]);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

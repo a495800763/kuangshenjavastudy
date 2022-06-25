@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//while循环的条件判断逻辑可以比for循环中数字大小比较的逻辑更复杂的逻辑判断
+			//例如string是否相等的判断
+			var message = prompt("你爱不爱我");
+			/*while可以对字符串结果进行逻辑判断,其他更复杂的逻辑判断亦可
+			，而for循环只能对计数器进行数字大小的判断,
+			或者判断条件是直到某条件达成，而不是限制循环体的执行次数时， 只能使用while 或者 dowhile
+			*/
+		
+			while(message!=='我爱你'){
+				message=prompt("你爱不爱我");
+			}
+			alert("终于等到你还好我没放弃！");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
