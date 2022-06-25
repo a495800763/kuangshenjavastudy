@@ -12,9 +12,16 @@
             }
             return sum;
         }
+        function cook(item){
+            console.log(item);
+        }
 
         console.log(getSum(1,100));
         console.log(getSum(2001,36502));
+        cook('酸辣土豆丝');
+        //有参数的函数调用是某个参数未传值，则在实际执行中用undefined做其值
+        cook();
+
     </script>
 </head>
 <body>
