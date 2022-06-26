@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //判断是否是闰年的函数
+        function isLeapYear(year) {
+            var result = false;
+            //能被一百整除的年份必须被400 整除才是闰年，其他年份必须被4 整除才是闰年
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                result = true;
+            }
+            return result;
+        }
+
+        //返回当年二月的最后一天
+        function lastDayOfFebruary(year){
+            if(isLeapYear(year)){
+                return '29';
+            }else{
+                return '28';
+            }
+        }
+
+        console.log(lastDayOfFebruary(2022));
+        console.log(lastDayOfFebruary(2020));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
