@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 根据作用域的不同分为全局变量和局部变量
+        var num = 10;
+        console.log(num);
+        function test(){
+            console.log(num);
+        }
+        test();
+        //函数内部声明的变量称为局部变量
+        function  fn() {
+            var num1 = 40;
+            console.log(num1);
+        }
+        fn();
+        //console.log(num1);
+        //注意： 在函数内部没有声明 ，没有var 关键字，直接赋值的变量也属于全局变量
+        function test2() {
+            myNum = 20;
+        }
+        console.log(myNum)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
