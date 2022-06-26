@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//1 return 不仅返回结果，梗会终止函数，遇到return语句之后，后面的代码不执行
+			function getSum(a, b) {
+				return a + b;
+				alert("我是不会被执行的");
+			}
+			console.log(getSum(1, 5));
+			//2 函数只能返回一个值，return后面的值可以用逗号隔开，语法上不错，但是只返回最后一个值
+			function test() {
+				return 1, 2, 3, 4;
+			}
+			console.log(test()); //结果是 4 
+
+			//3 需要返回多个值时， 可以使用数组作为返回值，也有其他方式
+			function getResult(num1, num2) {
+				return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+			}
+			//没有return语句的函数，返回undefined
+			function test2(){
+				alert("测试没有返回值的函数");
+			}
+			console.log(test2());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

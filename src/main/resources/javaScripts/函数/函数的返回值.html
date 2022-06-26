@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//函数实现某个功能之后应该返回某个值，或者状态；return 语句
+			// 返回两个数中的最大值
+			function getMax(num1, num2) {
+				if (num1 >= num2) {
+					return num1;
+				} else {
+					return num2;
+				}
+			}
+
+			//返回数组中的最大值
+			function getMaxArray(array) {
+				var max = array[0];
+				for (var i = 1; i < array.length; i++) {
+					if (max < array[i]) {
+						max = array[i];
+					}
+				}
+				return max;
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
