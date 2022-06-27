@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //创建对象的三种方式：字面量{}创建，new 关键字创建，构造函数创建
+        /*1 利用字面量创建对象*/
+        var obj = {};// 创建一个空的对象,属性，方法在后续以赋值形式给出，
+        obj.name ='柳梦琦';
+        obj.sex  ='male';
+        obj.age = 27
+        obj.toString = function(){
+            console.log(obj);
+        }
+        obj.getBirthday = function(){
+            return 2022-this.age;
+        }
+        obj.toString();
+        console.log(obj.getBirthday())
+
+        //以字面量创建对象时，属性，方法以键值对方式给出
+        var person = {
+            name : '张无忌',
+            age: 18,
+            telephone:15527049978,
+            sayHi:function () {
+                return "hello my name is zhangwuji ";
+            }
+        }
+
+        // 调用对象的属性语法一
+        console.log(person.telephone);
+        // 调用对象的属性语法二
+        console.log(person['name']);
+        // 调用对象的方法语法(只此一种)
+        console.log(person.sayHi());
+
+
+        var dog  = {
+            name:'可可',
+            type:'alasga',
+            age:5,
+            color:'棕红色',
+            bark:function () {
+                console.log("汪汪汪！！");
+            },
+            showFilm:function () {
+                console.log("我在演电影。");
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
