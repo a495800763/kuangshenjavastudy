@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);// a 在函数之外无声明无定义，因此报错 is not defined
+
+        function f1() {
+            // var 只对a作用， b,c 变成全局变量，而a 在函数之外无生命也无定义
+            var a = b = c = 9;
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
