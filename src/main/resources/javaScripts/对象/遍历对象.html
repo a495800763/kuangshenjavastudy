@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //使用 for (in)  语法遍历对象中的属性和属性值
+        var teacher = {
+            name: '刘曼',
+            age: 27,
+            grand: 4,
+            subject: '语文',
+            yearOfService: 2,
+            teaching : function () {
+                console.log("正在教学")
+            }
+        };
+
+        for(var attribute in teacher){
+            console.log(attribute);// attribute 得到的是属性名/方法名
+            console.log(teacher[attribute])//通过[]操作符和属性名再去得到属性值/方法相关属性。实现遍历
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
