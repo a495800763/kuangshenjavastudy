@@ -52,6 +52,89 @@
 
         dog.bark();
         dog.showFilm();
+
+        /**
+         * 2 利用 new Object 来创建对象
+         */
+        var ldh = new Object();
+        ldh.name="刘德华";
+        ldh.age = 58;
+        ldh.address = "中国香港特别行政区";
+        ldh.singASong = function () {
+            console.log(this.name+"正在唱歌");
+        }
+
+        ldh.singASong();
+
+
+        /**
+         * 3 利用 构造函数 来创建对象
+         * 为什么需要使用构造函数来创建对象：
+         * 封装具有相同属性和行为的一组对象，只是每个对象具体的值不同，类似java 的类的构造函数
+         */
+
+        var zjl = {
+            uname :'周杰伦',
+            age:37,
+            sing:function () {
+                console.log("稻香")
+            }
+        }
+
+        var zxy = {
+            uname :'张学友',
+            age:58,
+            sing:function () {
+                console.log("等你等到我心痛")
+            }
+        }
+
+        // 如上，两个对象的属性和方法有诸多重复代码，采用封装的思想提炼出构造函数，
+        //构造函数中封装的不是普通函数代码，而是对象。
+
+        // 构造函数的写法
+        // function 构造函数名（类名）(){
+        //     this.属性= 值;
+        //     this.方法= function(){
+        //
+        //     }
+        // }
+
+
+        //构造函数的名字首字母大写
+        // 有了这个构造函数，则可以生成其他属性不同的同类对象，他们都是Singer
+        function Singer(name,age,sex,song){
+            this.name = name;
+            this.sex =sex;
+            this.age=age;
+            this.song=song;
+            this.singASong = function () {
+                var str = this.name+"正在唱："+this.song;
+                console.log(str);
+            };
+            this.showMovie = function (movieName) {
+                var str = this.name+"正在演国语电影："+movieName;
+                console.log(str);
+            }
+        }
+
+        var ldhObj = new Singer('刘德华',58,'male','忘情水');
+        //在对象上定义的方法将会覆盖构造函数中的同名方法，因此在ldhObj上调用showMovie()方法
+        //打印 “正在演粤语电影”
+        ldhObj.showMovie=function(movieName){
+            console.log(this.name+"正在演粤语电影:"+movieName);
+        }
+        console.log(ldhObj);
+        ldhObj.singASong();
+        //在对象上定义的方法，同类构造函数生成的其他对象没有这个方法，会报错
+        ldhObj.showMovie("大块头有大智慧");
+
+        var ljjObj = new Singer('林俊杰',38,'male','那些你很冒险的梦');
+        console.log(ljjObj);
+        ljjObj.singASong();
+        //在对象上定义的方法，同类构造函数生成的其他对象没有这个方法，或者会在本对象上覆盖构造函数中的同名方法
+        // ，因此在ljjObj 上调用showMovie()会报错，此处报错,或者打印 “正在演国语电影”
+        ljjObj.showMovie("北京欢迎你");///*************************************
     </script>
 </head>
 <body>

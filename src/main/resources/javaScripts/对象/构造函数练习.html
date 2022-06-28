@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var Hero = function (name,type,blood,attchType) {
+            this.name=name;
+            this.type=type;
+            this.blood = blood;
+            this.attchType= attchType;
+            this.sayHi = function () {
+                var str = this.name+":是一个"+this.type+"类型的英雄，"+"其生命值为:"+
+                        this.blood+",攻击方式是："+this.attchType;
+                console.log(this);
+                console.log(str);
+            }
+        };
+
+        var lp = new Hero('廉颇','力量',500,'近战');
+        var hy = new Hero('后羿','射手',100,'远程');
+
+        lp.sayHi();
+        hy.sayHi();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
