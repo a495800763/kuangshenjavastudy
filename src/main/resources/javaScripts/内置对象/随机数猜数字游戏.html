@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var targetNum = getRandom(1,10);
+        console.log(targetNum);
+        var num ;
+        while ((num=prompt("请输入一个数字"))!=targetNum){
+            if(num<targetNum){
+                alert("数字小了");
+            }else{
+                alert("数字大了");
+            }
+        }
+        alert("猜对了");
+    </script>
+</head>
+<body>
+
+</body>
+</html>
