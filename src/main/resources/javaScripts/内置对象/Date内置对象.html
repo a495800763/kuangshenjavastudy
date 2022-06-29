@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*Date() 日期对象， Date()是其构造函数，必须使用new 关键字来创建对象
+        * */
+        //没有参数的调用构造函数返回系统当前时间
+        var time= new Date();
+        console.log(time);
+
+        //使用依次传入数字的方式构造时间时， 月份的数字应从0 开始，即传入6作为月份构造的实际月份为7月
+        var time2 = new Date(2022,6,1);
+        console.log(time2);
+        //使用字符串作为参数构造时间时，时间是准确的
+        var time3 = new Date('2022-06-04 16:21:35');
+        console.log(time3);
+        //使用字符串构造时间，但字符串未指定时分秒时，构造的时间在当天8.00
+        var time4 = new Date('2022-06-18');
+        console.log(time4);
+        var time5 = new Date('2008-08-08');
+        console.log(time5);
+        //使用数字构造时间，构造的时间在当天0.00
+        var time6 = new Date(2002,8,8);
+        console.log(time6);
+        //console.log(new Date('1995:07:08'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

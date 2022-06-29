@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 格式化日期 年月日星期
+        var date = new Date();
+        console.log(date.getFullYear());//返回当前日期的年 2022
+        console.log(date.getMonth());//返回当前日期的月份，范围【需注意】： 0-11
+        console.log(date.getDate());//返回当前日期是当月的第几号
+        console.log(date.getDate());//返回当前是周几，0-6,0表示周日，1-6表示周一至周六
+
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var dates =  date.getDate();
+        var weekArr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        var dayIndex = date.getDay();
+        console.log('今天是：'+year+'年'+month+'月'+dates+'日 '+weekArr[dayIndex]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
