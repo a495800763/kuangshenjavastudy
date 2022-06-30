@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //时间戳：当前时间距离1970.01.01 00:00:00 过去了多少毫秒
+        //拖过valueOf(),getTime()得到
+        var date =new Date();
+        console.log(date.getTime());
+        console.log(date.valueOf());
+
+        //直接得到时间戳的语法： +new Date()
+        var timeStamp = +new Date();
+        console.log(timeStamp);
+
+        // H5 新增的获取时间戳的方法
+        console.log(Date.now());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

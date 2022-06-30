@@ -12,11 +12,31 @@
         console.log(date.getDate());//返回当前是周几，0-6,0表示周日，1-6表示周一至周六
 
         var year = date.getFullYear();
-        var month = date.getMonth()+1;
-        var dates =  date.getDate();
-        var weekArr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
         var dayIndex = date.getDay();
-        console.log('今天是：'+year+'年'+month+'月'+dates+'日 '+weekArr[dayIndex]);
+        console.log('今天是：' + year + '年' + month + '月' + dates + '日 ' + weekArr[dayIndex]);
+
+
+        // 格式化时分秒
+        var date = new Date();
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+
+        function getTimer() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+
+        console.log(getTimer());
     </script>
 </head>
 <body>
