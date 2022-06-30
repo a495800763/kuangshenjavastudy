@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //翻转数组函数
+        function reverseArray(arr) {
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+
+        console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]));//传入参数是数组时，函数正常返回
+        console.log(reverseArray(1, 2, 3, 4, 5, 6, 7));//传入参数不是数组时，函数返回预料之外的值
+
+        //因此在调用函数及函数操作时，需要检测参数(实参)是否为数组
+        // 两种检测方式
+        var arr = [];
+        var obj = {};
+        console.log(arr instanceof Array);
+        console.log(obj instanceof Array);
+
+        console.log(Array.isArray(arr) );
+        console.log(Array.isArray(obj));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
