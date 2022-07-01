@@ -3,6 +3,19 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<script>
+			// 数组转换成字符串
+			//1. toString(),方法将数组转换成字符串,默认使用“,”对数组元素进行拼接，不能自定义分隔符
+			var arr = [1,2,3,4,5,6];
+			console.log(arr.toString());
+			var arr2 = [1,2,true,'false','pink',6];
+			console.log(arr2.toString());
+			//2. join(分隔符),自定义数组元素以分隔符拼接
+			console.log(arr.join('-'));
+			console.log(arr2.join('/'));
+			//URL 常用的使用&拼接参数
+			console.log(arr2.join('&'));
+		</script>
 	</head>
 	<body>
 	</body>
