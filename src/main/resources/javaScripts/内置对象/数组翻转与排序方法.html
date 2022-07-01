@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//翻转数组函数
+			var arr = ['liumengqi', 'wangqishan', 'xijinpin', 'lokeqiang', 'huchunhua'];
+			console.log(arr);
+			arr.reverse();
+			console.log(arr);
+
+			//数组排序（使用冒泡排序实现，但认定两个元素大小的方法默认为字典排序）
+			var arr2 = [3, 7, 1, 9, 6, 5, 8, 4, 2];
+			arr2.sort();
+			console.log(arr2);
+			// 数组排序默认排序方式实际按照字典排序方式排序，如下例
+			var arr3 = [13, 4, 77, 1, 7];
+			arr3.sort();
+			console.log(arr3); //输出 1,13,4,7,77
+			//为了使sort()按照数字升序排列，需要将排序方法作为匿名函数传递给sort,
+			//类似java 传递比较器,comparetor
+			var arr4 = [13, 4, 77, 1, 7];
+			arr4.sort(function(a, b) {
+				return a - b;
+			})
+			console.log(arr4);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
