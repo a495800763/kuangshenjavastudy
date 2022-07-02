@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //查找字符串'abcoefoxyozzopp'中所有o出现的位置及总次数
+        var str ='oabcoefoxyozzoppzcvasodaxvogsdforbowfasdasdqoasdasdas';
+        var count = 0;
+        var currentIndex = -1;
+        var indexArr = [];
+        do{
+            currentIndex = str.indexOf('o',currentIndex+1);
+            if(currentIndex!==-1){
+                indexArr.push(currentIndex);
+                count++;
+            }
+        }while (currentIndex!==-1);
+
+        console.log(count);
+        console.log(indexArr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

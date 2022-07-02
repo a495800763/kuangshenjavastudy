@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script>
+        //字符串的不可变性
+        var str ='andy';
+        console.log(str);
+        str='red';
+        console.log(str);
+        // for(var i = 0;i<10000000;i++){
+        //     str+=i;
+        // }
+        console.log(str);
+
+        //在字符串中查找指定字符的index
+         var str1= '改革春风吹满地，春天到了';
+         console.log(str1.indexOf('春'));
+        console.log(str1.indexOf('春',3));//查找字符的index，但是偏移量是3，即index=[0,1,2]的字符不考虑
+    </script>
+</head>
+<body>
+
+</body>
+</html>
