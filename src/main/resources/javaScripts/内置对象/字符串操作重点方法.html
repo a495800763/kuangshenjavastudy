@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.concat()。链接两个或多个字符串，等效于+操作符
+        var str = '柳梦琦';
+        var str2 = '今年十八岁';
+        var str3 = '住在湖北省武汉市';
+        console.log(str.concat(str2));
+        console.log(str.concat(str2, str3));//可以一次拼接多个字符串
+        console.log(str.concat(str3, str2));//拼接的顺序与参数的顺序一致
+
+        //2 substr(startindex,length);
+        var strNew = '程序员面试宝典标准日本语';
+        console.log(strNew.substr(3, 6));//从索引是3 的字符开始取6个;
+
+        // 3 replace 替换字符串
+        var strReplace = '柳梦琦是来自杭州的选手';
+        console.log(strReplace.replace('杭州', '武汉'));
+        var strReplace2 = '柳梦琦是来自杭州的选手,且现居杭州';
+        console.log(strReplace2.replace('杭州', '武汉'));//只会替换遇到的第一个
+        //字符串转换为数组
+        var paramStr = 'value1=2;value2=true;value3=beijing';
+        var paramArr = paramStr.split(';');
+        console.log(paramArr);
+        //转换成大小写
+        var str5 = 'aBcDeFgHiJkL';
+        console.log(str5.toUpperCase());
+        console.log(str5.toLowerCase());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
