@@ -3,6 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title> </title>
+    <script>
+        //返回指定index处的字符
+        var str = '中华人民共和国';
+        console.log(str);
+        console.log(str.charAt(4));
+        console.log(str.charAt(10));//超出范围的index返回''
+        console.log(str.charAt(10)=='');
+        console.log(str.charAt(-1));//超出范围的index返回''
+        console.log(str.charAt(-1)=='');
+
+        //遍历所有的字符
+        for(var i =0;i<str.length;i++){
+            console.log(str.charAt(i));
+        }
+
+        //2.charCodeAt(index) 返回相应索引号对应字符的ASCII码，
+        //目的:判断用户按下了哪个键
+        console.log(str.charCodeAt(2));
+    </script>
 </head>
 <body>
 
