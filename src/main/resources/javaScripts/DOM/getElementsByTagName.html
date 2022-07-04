@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>知否知否，应是等你好久</li>
+			<li>知否知否，应是等你好久</li>
+			<li>知否知否，应是等你好久</li>
+			<li>知否知否，应是等你好久</li>
+			<li>知否知否，应是等你好久</li>
+		</ul>	
+		<ol>
+			<li>生僻字</li>
+			<li>生僻字</li>
+			<li>生僻字</li>
+			<li>生僻字</li>
+			<li>生僻字</li>
+		</ol>	
+		<script type="text/javascript">
+			//返回的是，所获取的标签的伪数组，
+			var elements = document.getElementsByTagName('li');
+			console.log(elements);
+			for(var i = 0;i<elements.length;i++){
+				console.log(elements[i]);
+				console.dir(elements[i]);
+			}
+			console.log(typeof elements);
+			console.dir(elements);
+			
+			
+			var otherEle = document.getElementsByTagName('h1');
+			//获取页面上不存在的标签时，返回的是一个空的伪数组，长度是0 ，没有元素
+			console.log(otherEle);
+			console.dir(otherEle);
+			
+			//在页面同时存在ul ol 等父元素的情况下，只获取ol下的li标签的方法
+			//先获取其父标签（ol）;
+			//注意:getElementsByTagName返回的不是父元素，而是可能的父元素标签构成的伪数组，
+			//arr[i] 才能获取指定的父元素 element
+			var olliElement=  document.getElementsByTagName('ol')[0].getElementsByTagName('li')
+			console.log(olliElement);
+			console.dir(olliElement);
+		</script>	
+	</body>
+</html>

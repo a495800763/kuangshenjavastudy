@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<div id='second'></div>
+		<p>
+			我是P标签中的文字
+			<span>123</span>
+		</p>
+		<script>
+			//innerText和innerHTML 的区别
+			var div = document.querySelector('div');
+			//innerText 不识别html标签，所有字符全部显示，非W3C标准
+			div.innerText = '<strong>今天是2019</strong>';
+			//innerHTML 识别字符串中的html标签，W3C标准
+			var second = document.getElementById('second');
+			second.innerHTML='<strong>今天是2019</strong>';
+			
+			// 这两个属性不仅是可写的  也是可读的
+			var pObj = document.querySelector('p');
+			//innerText 得不到标签的字符，且取出空格和换行
+			var pText = pObj.innerText;
+			// innerHTML 得到完整的html代码信息，包括标签，空格 换行等
+			console.log(pText);
+			var pHTML = pObj.innerHTML;
+			console.log(pHTML);
+		</script>
+	</body>
+</html>

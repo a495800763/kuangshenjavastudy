@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="time">2022-07-03</div>
+		<script>
+			//1 因为文档从上往下加载，所以script脚本写在需要操作的标签(元素)的下方
+			//2 getElementById() ,返回的是一个元素对象
+			var timer = document.getElementById('time');
+			console.log(timer);
+			console.log(typeof timer);
+			// console.dir()方法，打印元素对象的属性，方法等信息,比console.log 详细
+			console.dir(timer);
+		</script>
+	</body>
+</html>
