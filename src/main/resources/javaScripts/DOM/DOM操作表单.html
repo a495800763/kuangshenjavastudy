@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+<input type="text" value="输入内容">
+<script>
+    // 1 获取元素
+    var btn = document.querySelector('button');
+    var input = document.querySelector('input');
+    btn.onclick = function () {
+        //表单中的值通过value修改，而非innerHTML等
+        input.value = '点击了';
+        //禁用按钮
+        //this即时间函数的调用者，即btn
+        this.disabled=true;
+    }
+</script>
+</body>
+</html>
