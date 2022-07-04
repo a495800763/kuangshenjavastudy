@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width:150px;
+            height: 150px;
+        }
+        div{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="sasuke">佐助</button>
+    <button id="naruto">鸣人</button>
+    <div> <img src="images/sasuke.jpg" alt="" title="佐助"></div>
+    <script type="text/javascript">
+        var img = document.querySelector('img');
+        var sasuke = document.getElementById('sasuke');
+        sasuke.onclick=function () {
+            img.src='images/sasuke.jpg';
+            img.title='佐助';
+        };
+        var naruto = document.getElementById('naruto');
+        naruto.onclick=function () {
+            img.src='images/naruto.jpg';
+            img.title='鸣人';
+        };
+    </script>
+</body>
+</html>
