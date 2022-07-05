@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.querySelector('div');
+    div.onclick=function () {
+        //注意事项: 使用js 对元素的style 进行修改，得到的是行内样式，具有最高的权重，会覆盖其他css样式
+        // style 中的属性使用驼峰命名法
+        this.style.backgroundColor='yellow';
+        this.style.width='250px';
+    }
+</script>
+</body>
+</html>
