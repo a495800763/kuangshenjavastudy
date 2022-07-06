@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="手机">
+<script>
+    var input = document.querySelector('input');
+    //鼠标聚焦事件
+    input.onfocus=function () {
+        this.value="";
+        // 聚焦后 需要把文本框的颜色变深
+        this.style.color='#333'
+    };
+    //鼠标失焦事件
+    input.onblur=function(){
+        if(this.value===''){
+            //如果失焦时用户啥也没有输入
+            this.value='手机';
+            // 失焦后 需要把文本框的颜色变浅
+        }
+        this.style.color='#999'
+
+    }
+</script>
+</body>
+</html>

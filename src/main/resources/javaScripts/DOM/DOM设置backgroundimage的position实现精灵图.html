@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 250px;
+            margin: 100px auto;
+        }
+        .box li {
+            list-style: none;
+            float: left;
+            width: 24px;
+            height:24px;
+            background-color: pink;
+            margin: 15px;
+            background: url("images/sprite.png") no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var lies =document.querySelectorAll('li');
+        for(var i =0;i<lies.length;i++){
+            var index = i*44;
+            //每张图片显示时 ，都在图片上产生一定的位移，相当于在一副巨大画幅上挪动相框，
+            //而根据图片的属性得知，每次移动的方位应该是 [0，-44]
+            lies[i].style.backgroundPosition='0 -'+index+'px';
+        }
+    </script>
+</div>
+</body>
+</html>
