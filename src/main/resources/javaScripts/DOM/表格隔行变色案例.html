@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //本例用到的两个新的事件
+        //onmouseover 鼠标经过
+        //onmouseout 鼠标离开
+    </script>
+    <style>
+        table {
+            width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        tbody tr {
+            height: 30px;
+        }
+
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+            color: blue;
+        }
+
+        .mouseonbg {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>书籍</th>
+        <th>作者</th>
+        <th>出版社</th>
+        <th>出版日期</th>
+        <th>价格</th>
+        <th>当前库存</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>C#开发入门与实战</td>
+        <td>柳梦琪</td>
+        <td>电子工业出版社</td>
+        <td>2015-06-15</td>
+        <td>68.90</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>数据库系统设计与概论</td>
+        <td>王珊 萨师楦</td>
+        <td>高等教育出版社</td>
+        <td>2014-09-26</td>
+        <td>35.00</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>哈利波特与火焰杯</td>
+        <td>JK.罗玲</td>
+        <td>作家出版社</td>
+        <td>2003-04-14</td>
+        <td>70.00</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>哈利波特与凤凰社</td>
+        <td>JK.罗玲</td>
+        <td>作家出版社</td>
+        <td>2005-08-12</td>
+        <td>83.00</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>哈利波特与死亡圣器</td>
+        <td>JK.罗玲</td>
+        <td>作家出版社</td>
+        <td>2010-01-30</td>
+        <td>99.00</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Java开发实例大全</td>
+        <td>佚名</td>
+        <td>清华大学出版社</td>
+        <td>2019-11-23</td>
+        <td>75.00</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Java核心技术</td>
+        <td>Fsdasd.Gavae</td>
+        <td>机械工业出版社</td>
+        <td>2014-05-09</td>
+        <td>69.00</td>
+        <td>43</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    var trs = document.querySelector('tbody').querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+        //注册鼠标经过事件
+        trs[i].onmouseover = function () {
+            //鼠标经过时，这一行添加背景色
+            this.className='mouseonbg';
+        };
+        //注册鼠标离开事件
+        trs[i].onmouseout = function () {
+            //鼠标经过时，这一行移除背景色
+            this.className='';
+        };
+    }
+</script>
+</body>
+</html>
