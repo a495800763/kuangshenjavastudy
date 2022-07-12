@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .change{
+            background-color: purple;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="first">这是测试文本</div>
+<script>
+    var div = document.querySelector('div');
+    div.onclick=function () {
+        //为当前元素赋值 class ='change'\
+        console.log(this.className);
+        if(this.className.indexOf('change')===-1){
+            this.className=this.className+' change';
+        }
+
+        //1如果样式修改较多，可以采取操作类名的方式统一更改元素样式
+        //2.由于class是保留字，修改时使用的属性名为className
+        //3.className 的修改会覆盖原本的标签class
+    }
+</script>
+</body>
+</html>

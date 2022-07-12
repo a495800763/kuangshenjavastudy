@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(../../images/arrow_down.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .wrong {
+            color: red;
+            background-image: url("../../images/arrow_right.png");
+        }
+        .right{
+            color: limegreen;
+            background-image:url(../../images/arrow_down.png);
+        }
+    </style>
+</head>
+<body>
+<div class="register">
+    <input type="password" class="ipt">
+    <p class="message">请输入6~16位密码</p>
+</div>
+<script>
+    /*
+    首先判断的事件是表单失去焦点， onblur
+    如果输入的密码满足要求则提示正确的信息，颜色为绿色的小图标变化
+    如果输入的不是6-16位，则提示出错，颜色为红色的小图标变化，
+    因为这里变化的样式比较多，使用className修改样式
+    * */
+    var input = document.querySelector('.ipt');
+    var msg = document.querySelector('.message');
+    input.onblur = function () {
+        var inputStr = this.value;
+        if (inputStr.length >= 6 && inputStr.length <= 16) {
+            console.log('正确');
+            msg.className = 'message right';
+            msg.innerHTML = '输入的密码有效';
+        } else if (inputStr.length===0){
+
+            msg.className = 'message';
+            msg.innerHTML = '请输入6~16位密码';
+        }
+        else
+        {
+            console.log('错误');
+            msg.className = 'wrong message';
+            msg.innerHTML = '您输入的密码位数不满足要求，需要6~16位';
+
+        }
+    }
+</script>
+</body>
+</html>
