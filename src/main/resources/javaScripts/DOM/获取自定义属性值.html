@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo" index ="liumengqi"></div>
+<script>
+    //获取元素属性值的一般方法，element.属性,用于获取默认属性
+    var div = document.querySelector('div');
+     console.log( div.id);
+     //获取元素属性值的新方法 getAttribute();，用于获取自定义属性
+    console.log(div.getAttribute('id'));
+    console.log(div.getAttribute('index'));
+    //使用=赋值方式修改默认属性值
+    div.id='newId';
+    console.log( div.id);
+    //使用setAttribute 方式设置自定义属性值
+    div.setAttribute('index','wangqishan');
+    console.log(div.getAttribute('index'));
+</script>
+</body>
+</html>
