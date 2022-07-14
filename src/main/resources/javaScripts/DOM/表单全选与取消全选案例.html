@@ -3,8 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+    </script>
+    <style>
+        table {
+            width: 300px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        tbody tr {
+            height: 30px;
+        }
+
+        tbody td {
+            border: 1px solid #d7d7d7;
+            font-size: 12px;
+            color: blue;
+        }
+
+
+    </style>
 </head>
 <body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <input type="checkbox" id="j_cbAll">
+        </th>
+        <th>商品</th>
+        <th>价格</th>
+    </tr>
+    </thead>
+    <tbody id="j_tb">
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>iPhone8</td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>macbook pro</td>
+        <td>15000</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>iPad</td>
+        <td>4000</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>AppleWatch</td>
+        <td>3200</td>
+    </tr>
+    </tbody>
+</table>
+<script>
 
+    //获取元素
+    var j_cbAll = document.getElementById('j_cbAll'); //全选按钮
+    var j_tbs= document.getElementById('j_tb').getElementsByTagName('input');//下面所有的复选框
+
+    //1.全选和取消全选的做法，让下面所有复选框的checked属性跟随全选按钮
+    // 注册事件
+    j_cbAll.onclick=function () {
+        var checkedStatus = this.checked;
+        for(var i =0;i<j_tbs.length;i++){
+            j_tbs[i].checked=checkedStatus;
+        }
+    }
+    //2.复选框是否全选改变全选按钮的业务
+
+
+
+</script>
 </body>
 </html>
