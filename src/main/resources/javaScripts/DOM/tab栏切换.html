@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.tab_con{
+				display: block;
+			}
+			
+			ul{
+				color: #666;
+				background-color: #666;
+			}
+			
+			.tab_list{
+				background-color:#fff;
+			}
+			
+			.tab_list li{
+				float:left;
+				height:39px;
+				line-height: 39px;
+				padding: 0 20px;
+				text-align: center;
+				cursor: pointer;
+				list-style: none;
+			}
+			
+			.tab_list .current{
+				background-color: #c81623;
+				color:#fff
+			}
+			
+			.item_infoP{
+				padding: 20px 0 0 20px;
+			}
+			
+			.item{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class ='tab'>
+			<div class ='tab_list'>
+				<ul>
+					<li index='0' class ='current'>商品介绍</li>
+					<li index='1'>规格与包装</li>
+					<li index='2'>售后保障</li>
+					<li index='3'>商品评价（50000）</li>
+					<li index='4'>手机社区</li>
+				</ul>
+				
+			</div>
+			<div class = 'tab_con'>
+				<div class ='item'>
+					商品介绍模块内容
+				</div>
+				<div class ='item'>
+					规格与包装模块内容
+				</div>
+				<div class ='item'>
+					售后保障模块内容
+				</div>
+				<div class ='item' style='display: block;'>
+					商品评价（50000）模块内容
+				</div>
+				<div class ='item'>
+					手机社区模块内容
+				</div>
+			</div>
+			
+		</div>
+		
+		<script>
+			var tabList = document.getElementsByClassName('tab_list')[0].querySelectorAll('li');
+			console.log(tabList.length);
+			var tabConList = document.getElementsByClassName('tab_con')[0].getElementsByClassName('item');
+			for(var i =0;i<tabList.length;i++){
+				tabList[i].onclick=function(){
+					//先全部清楚current
+					for(var j=0;j<tabList.length;j++){
+						tabList[j].className ='';
+					}
+					this.className='current';
+					// //清除tab_con中所有元素的display
+					for(var k = 0;k<tabConList.length;k++){
+						tabConList[k].style.display='none';
+					}
+					// tabConList[i-1].setAttribute('style',"display: block;");
+					var index = this.getAttribute('index');
+					console.log(index);
+					tabConList[index].style.display='block';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div getTime='20' data-index='2' data-myAttribute='hahah' data-myattribute='liumengqi' data-my-only-value='90'>
+			
+		</div>
+		<script>
+			var div = document.querySelector('div');
+			//获取属性的一般方法:element.属性，对自定义属性无效
+			console.log(div.getTime);
+			//必须使用getAttribute 获取自定义属性
+			console.log(div.getAttribute('getTime'));
+			//H5 对自定义属性进行规范，统一使用data-作为属性名前缀
+			console.log(div.getAttribute('data-index'));
+			console.log(div.getAttribute('data-myAttribute'));
+			//这时H5提供了另外一个获取这类data-前缀的自定义属性的方法
+			//特别注意：不管标签中使用的data-自定义属性是否有大小写区分，
+			// 获取时，一律使用小写, 不区分大小写后相同的属性，取第一个
+			
+			console.log(div.dataset.index);
+			console.log(div.dataset.myattribute);
+			//多个-隔开单词的属性获取时使用驼峰命名
+			console.log(div.dataset.myOnlyValue);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ol>
+			<li>我是li1</li>
+			<li>我是li2</li>
+			<li>我是li3</li>
+			<li>我是li4</li>
+		</ol>
+		<script>
+			var ol = document.querySelector('ol');
+			//firstChild还是可能获取非元素节点的第一个节点
+			var first = ol.firstChild;
+			console.log(first);
+			//firstChild还是可能获取非元素节点的最后个节点
+			var last = ol.lastChild;
+			console.log(last);
+
+
+			//firstElementChild，lastElementChild 才是获取第一个最后一个子元素的正确方式
+			//存在兼容性问题 IE9 以上支持
+			var firstElement = ol.firstElementChild;
+			console.log(firstElement);
+			var lastElement = ol.lastElementChild;
+			console.log(lastElement);
+			//解决兼容性的实际开发中写法
+			console.log(ol.children[0])
+			console.log(ol.children[ol.children.length-1]);
+		</script>
+	</body>
+</html>

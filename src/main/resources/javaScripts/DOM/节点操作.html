@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 网页中所有的内容都是节点， -->
+		<!-- 节点的 优点 -->
+		<div>我是div</div>
+		<span>我是span</span>
+		<ul>
+			<li>我是li</li>
+			<li>我是li</li>
+			<li>我是li</li>
+			<li>我是li</li>
+		</ul>
+		<ol>
+			<li>我是li</li>
+			<li>我是li</li>
+			<li>我是li</li>
+			<li>我是li</li>
+		</ol>
+		<div class='box'>
+			<span class="qrcode">x</span>
+		</div>
+
+		<script>
+			//节点操作:更方便的获取元素
+			var box = document.querySelector('.box');
+			console.dir(box);
+
+			//父级节点 parentNode
+			var qrCode = document.querySelector('.qrcode');
+			//通过父节点关系直接取到div class='box'这一节点(元素，标签)，如果没有父节点则返回null
+			console.log(qrCode.parentNode);
+
+			//子节点(伪集合) childNodes(HTML文本结构中所有的节点都会获取，包括文本节点（回车 空格）等等)
+			var ul = document.querySelector('ul');
+			console.log(ul.childNodes); //获取9个child节点
+			//可以根据nodeType 区分元素节点，文本节点等等
+			for (var i = 0; i < ul.childNodes.length; i++) {
+				if (ul.childNodes[i].nodeType == 1) {
+					//nodeType=1的是元素节点
+					console.log(ul.childNodes[i]);
+				}
+			}
+
+			//2 使用children 直接得到元素节点
+			console.log(ul.children);
+		</script>
+	</body>
+</html>
