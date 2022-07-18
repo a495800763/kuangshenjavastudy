@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>我是p节点</p>
+<div>我是div</div>
+<span>我是span</span>
+<script>
+    var div = document.querySelector('div');
+    var nextNode = div.nextSibling;
+    //div 的下一个兄弟节点是文本节点text,即nextSibling得到的是所有类型的兄弟节点，包含文本节点等
+    //同理previousSibling
+    var previousNode = div.previousSibling;
+    console.dir(nextNode);
+    console.dir(previousNode);
+    //nextElementSibling返回当前节点的下一个兄弟元素节点，找不到返回null
+    var nextElement = div.nextElementSibling;
+    console.dir(nextElement);
+
+    var previousElement = div.previousElementSibling;
+    console.dir(previousElement);
+    // nextElementSibling previousElementSibling 仅支持IE9 以上
+    //解决兼容性的方案，封装函数
+
+
+    function getNextElementSibling(element){
+
+        //直到找到第一个元素节点为止,否则返回null
+        var el = element;
+        while (el=el.nextSibling){
+            if(el.nodeType===1){
+                return el;
+            }
+        }
+
+        return null;
+    }
+
+</script>
+</body>
+</html>

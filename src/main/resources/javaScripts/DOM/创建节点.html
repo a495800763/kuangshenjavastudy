@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul></ul>
+<script>
+    //1 获取要添加的节点的父节点
+    var ul = document.querySelector('ul');
+    //2 创建需要在ul子节点一级被添加的节点 li
+
+    //3 将li添加到ul中
+    //ul.appendChild(li);
+    for(var i= 0;i<=9;i++){
+        var li = document.createElement('li');
+        li.innerHTML='这是我新创建的节点'+i+'个';
+        console.log(i)
+        ul.appendChild(li);
+    }
+
+    //insertBefore 在指定元素前追加元素
+    var p = document.createElement('p');
+    p.innerHTML='这是一个p元素';
+    //将p标签
+    ul.insertBefore(p,ul.children[1]);
+</script>
+</body>
+</html>
