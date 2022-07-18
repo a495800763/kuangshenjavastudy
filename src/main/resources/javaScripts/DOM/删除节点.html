@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>删除</button>
+<ul>
+    <li>蔡徐坤</li>
+    <li>肖战</li>
+    <li>王一博</li>
+    <li>易烊千玺</li>
+    <li>丁真</li>
+    <li>王源</li>
+    <li>吴亦凡</li>
+</ul>
+<script>
+    var fatherNode = document.querySelector('ul');
+    // var lis = fatherNode.children;
+    // fatherNode.removeChild(lis[0]);
+    var btn = document.querySelector('button');
+    btn.onclick=function () {
+         var lis = fatherNode.children;
+         if(lis.length==0){
+             this.disabled=true;
+         }else{
+             fatherNode.removeChild(lis[0]);
+         }
+    }
+</script>
+</body>
+</html>
