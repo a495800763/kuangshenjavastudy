@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    var ul = document.querySelector('ul');
+    var firstChild = ul.children[0];
+    //cloneNode(),无参数时，默认浅拷贝，只赋值其标签，不赋值内容，因此没有value值等其他内容
+    var cloneNode =   firstChild.cloneNode();
+    ul.appendChild(cloneNode);
+
+    //深拷贝节点
+    var cloneNodeDeep = firstChild.cloneNode(true);
+    ul.appendChild(cloneNodeDeep)
+</script>
+</body>
+</html>

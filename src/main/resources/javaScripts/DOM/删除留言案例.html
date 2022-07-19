@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul li {
+        background-color: pink;
+        color: black;
+        font-size: large;
+        margin-bottom: 5px;
+    }
+
+    li a{
+        float: right;
+    }
+</style>
+<body>
+<textarea name="" id="" cols="30" rows="10"></textarea>
+<button>发布</button>
+<ul></ul>
+</body>
+<script>
+    var lastComment = '';
+    var text = document.querySelector('textarea');
+    var btn = document.querySelector('button');
+    var ul = document.querySelector('ul');
+    btn.onclick = function () {
+        var li = document.createElement('li');
+        var textStr = text.value;
+        if (textStr === '' || textStr === null) {
+            alert('请输入留言再发布');
+        } else {
+            if (lastComment === textStr) {
+                alert('不允许重复发布');
+            } else {
+                lastComment = textStr;
+                // javascript:;   阻止链接跳转
+                li.innerHTML = textStr+"<a href='javascript:;'>删除</a>";
+                ul.insertBefore(li,ul.children[0]);
+                //对删除按钮添加事件
+                var lichis =  li.children;
+                for(var i = 0;i<lichis.length;i++){
+                    if(lichis[i].tagName==='A'){
+                        lichis[i].onclick = function () {
+                            this.parentNode.parentNode.removeChild(this.parentNode);
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+</html>
