@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>123</div>
+<a href="http://www.baidu.com">百度网站</a>
+<form action="http://www.baidu.com">
+    <input type="submit" value="提交" name="sub">
+</form>
+<script>
+    //阻止默认行为，让a标签不跳转，submit不提交等等。。。
+    var a = document.querySelector('a');
+    a.addEventListener('click',function (e) {
+        //dom 标准写法，阻止默认，即不跳转
+        e.preventDefault();
+        console.log('阻止后的代码');
+    })
+
+    a.onclick=function () {
+        // return false 也能阻止默认行为，但是不会执行后续方法,且只能用于传统注册事件方式，即非addEventListener
+        return false;
+        console.log('阻止后的代码');
+    }
+</script>
+</body>
+</html>
