@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>123</div>
+<script>
+    var div = document.querySelector('div');
+    div.onclick=function (event) {
+        //event 就是一个事件对象,可以添加到listener的方法参数中，但不需要在调用是传递，直接可以在方法体中使用
+        // event是事件一系列相关数据的集合，
+        console.log('点击事件');
+        console.log(event);
+    }
+
+    div.onmouseout=function (event) {
+        console.log('失焦事件');
+        console.log(event);
+    }
+</script>
+</body>
+</html>
