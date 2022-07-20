@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    var divs = document.querySelectorAll('div');
+    divs[0].onclick=function () {
+        alert('第一个div');
+        //传统的一次解绑写法
+        this.onclick=null;
+    }
+    divs[1].addEventListener('click',listener)
+
+    function listener(){
+        alert('hello world');
+        //移除绑定 ，将方法名传入，此时如果一开始绑定的是匿名函数则不方便使用这样的写法
+        //因此一开始就要使用非匿名函数，即此处的listener
+        divs[1].removeEventListener('click',listener);
+    }
+</script>
+</body>
+</html>

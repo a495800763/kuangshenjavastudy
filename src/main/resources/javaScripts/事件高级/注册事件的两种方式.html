@@ -7,6 +7,7 @@
 <body>
 <button>传统注册事件</button>
 <button>方法监听注册事件</button>
+<button>IE9以前使用attachEvent方式</button>
 <script>
     var btns = document.querySelectorAll('button');
     //传统事件注册方式
@@ -21,11 +22,16 @@
     //方法监听注册事件方式 addEventListener(),可以注册多个监听器，按顺序执行。IE9之后才支持
     btns[1].addEventListener('click',function () {
         alert('hello');
-    })
+    });
 
     //同一个target和事件 ‘click’ 可以多次添加监听器，按添加顺序执行
     btns[1].addEventListener('click',function () {
         alert('how are you');
+    })
+
+    //仅IE9以前版本才支持的attackEvent
+    btns[2].attachEvent('onclick',function () {
+        alert('button 3')
     })
 
 </script>
