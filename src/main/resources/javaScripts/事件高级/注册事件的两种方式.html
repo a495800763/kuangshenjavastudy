@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>传统注册事件</button>
+<button>方法监听注册事件</button>
+<script>
+    var btns = document.querySelectorAll('button');
+    //传统事件注册方式
+    btns[0].onclick=function () {
+        alert('hi')
+    }
+    //后面注册的事件会覆盖前面的注册事件
+    btns[0].onclick=function () {
+        alert('how are you ')
+    }
+
+    //方法监听注册事件方式 addEventListener(),可以注册多个监听器，按顺序执行。IE9之后才支持
+    btns[1].addEventListener('click',function () {
+        alert('hello');
+    })
+
+    //同一个target和事件 ‘click’ 可以多次添加监听器，按添加顺序执行
+    btns[1].addEventListener('click',function () {
+        alert('how are you');
+    })
+
+</script>
+</body>
+</html>
