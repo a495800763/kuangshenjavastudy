@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+我是一段不愿意被别人给分享出去的文字
+<script>
+    //1 contextmenu ,点击右键菜单的响应事件
+    document.addEventListener('contextmenu',function (e) {
+        console.log('在全局点击了右键菜单');
+        //使用阻止默认行为的方式阻止右键菜单弹出
+        //即响应了这个事件，但是不弹出菜单
+        e.preventDefault();
+    });
+
+    //selectstart ,开始选中文字的事件
+    document.addEventListener('selectstart',function (e) {
+        console.log('在全局选中了某段文字');
+        //使用阻止默认行为的方式阻止选中文字
+        //即响应了这个事件，但是无法选中文字
+        e.preventDefault();
+    })
+</script>
+</body>
+</html>
