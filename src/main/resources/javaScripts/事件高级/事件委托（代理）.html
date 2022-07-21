@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .highlight{
+            background-color: greenyellow;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>习近平</li>
+    <li>李克强</li>
+    <li>栗战书</li>
+    <li>汪洋</li>
+    <li>王沪宁</li>
+    <li>赵乐际</li>
+    <li>韩正</li>
+</ul>
+<script>
+    //事件代理的核心原理：在需要循环给兄弟节点设置同类型响应事件时，将这个响应事件设置到他们共同的父节点上，
+    //由于存在事件冒泡机制，每个子节点触发事件都会被父节点的响应事件所响应，而触发事件的节点通过事件对象event
+    //中的属性获取
+    var ul = document.querySelector('ul');
+    ul.addEventListener('mouseover',function (e) {
+        e.target.className='highlight';
+    })
+    ul.addEventListener('mouseout',function (e) {
+        e.target.className='';
+    })
+</script>
+</body>
+
+</html>
