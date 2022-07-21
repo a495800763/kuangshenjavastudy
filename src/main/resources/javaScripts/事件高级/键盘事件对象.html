@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // document.addEventListener('keyup',function (e) {
+    //     console.log(e.key+'键弹起了')
+    // });
+    // //keydown 事件，键盘按下时触发，如果不松开会一直触发
+    // document.addEventListener('keydown',function (e) {
+    //     console.log(e.key+'键按下了down')
+    // })
+    // //keypress 事件，键盘按下时触发，如果不松开会一直触发,但是不响应ctrl shift 之类的功能键
+    // document.addEventListener('keypress',function (e) {
+    //     console.log(e.key+'键按下了press');
+    // })
+
+    //keyup keydown 不区分字母大小写，得到的都ascii码都是大写的码,如按下a,ascii
+    //码显示A 的 65
+    document.addEventListener('keyup',function (e) {
+        console.log(e.keyCode+'键弹起了')
+        console.log(e.key+'键弹起了')
+    });
+    //keypress 区分字母大小写
+    document.addEventListener('keypress',function (e) {
+        console.log('----------');
+        console.log(e.keyCode+'键弹起了');
+        console.log(e.key+'键弹起了');
+        console.log('----------')
+    });
+</script>
+</body>
+</html>
