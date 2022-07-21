@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .son{
+            width: 100px;
+            height: 100px;
+            align-content: center;
+            background-color: pink;
+        }
+        .father{
+            width: 150px;
+            height: 150px;
+            align-content: center;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class ="son">儿子div</div>
+</div>
+<script>
+    //事件冒泡模型
+    var son = document.querySelector('.son');
+    son.addEventListener('click',function (e) {
+        console.log('son');
+        //阻止往上冒泡
+        e.stopPropagation()
+    },false);
+    var father = document.querySelector('.father');
+    father.addEventListener('click',function (e) {
+        console.log('father');
+    },false);
+    document.addEventListener('click',function (e) {
+        console.log('document');
+    },false);
+</script>
+</body>
+</html>
