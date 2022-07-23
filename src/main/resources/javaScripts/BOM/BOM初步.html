@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM概述</title>
+</head>
+<body>
+<script>
+    //全局变量其实是window对象的属性
+    var num=10;
+    console.log(num);
+    console.log(window.num);
+    //全局函数其实是window对象的一个方法
+    function fn (){
+        console.log("this is my function ");
+    }
+    fn();
+    window.fn();
+
+
+    console.dir(window);
+</script>
+</body>
+</html>
