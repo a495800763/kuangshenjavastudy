@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // //在页面正常加载过程中，脚本放在元素上方不会生效
+        // var btn = document.querySelector('button');
+        // btn.addEventListener('click',function(){
+        //     alert('button被电击了')
+        // })
+
+        //使用window.onload 在页面内容全部被加载完成后再执行
+        //window.onload 是以传统方式注册load 事件，具有传统注册方式的弊端（最后一个生效）
+        window.onload=function () {
+            //在页面正常加载过程中，脚本放在元素上方不会生效
+            var btn = document.querySelector('button');
+            btn.addEventListener('click',function(){
+                alert('button被点击了')
+            })
+        }
+
+        //页面元素全部加载完毕之后出发，包括DOM 图标 CSS flash
+        window.addEventListener('load',function () {
+            alert('页面全部加载完成了')
+        })
+        // DOMContentLoaded 事件， IE9 以上，仅当DOM加载完成时触发，不包括样式表，图片，flash等等
+        //即 其触发速度快于load 事件
+        window.addEventListener('DOMContentLoaded',function () {
+            alert('DOM加载完成了')
+        })
+    </script>
+</head>
+<body>
+<script>
+    // //在页面正常加载过程中，脚本放在元素上方不会生效
+    // var btn = document.querySelector('button');
+    // btn.addEventListener('click',function(){
+    //     alert('button被电击了')
+    // })
+</script>
+<button>点击</button>
+
+</body>
+</html>
