@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var  i = 1;
+    //周期调用
+    var id=window.setInterval(function () {
+        console.log('第'+i+'个2秒过去了');
+        i++;
+        if(i>10){
+            window.clearInterval(id);
+            console.log('结束了');
+        }
+    },2000);
+
+
+    //延迟调用
+    var timeOutId= window.setTimeout(function () {
+        console.log('5秒事件到了');
+    },5000);
+</script>
+</body>
+</html>
