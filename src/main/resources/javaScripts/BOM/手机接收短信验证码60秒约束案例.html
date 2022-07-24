@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button>发送</button>
+<script>
+    var btn = document.querySelector('button');
+    var time = 5;
+    btn.addEventListener('click', function () {
+        btn.disabled = true;
+        var timer = window.setInterval(function () {
+            if (time == 0) {
+                clearInterval(timer);
+                btn.disabled = false;
+                btn.innerHTML='发送';
+                time = 5;
+            } else {
+                btn.innerHTML = '还剩下' + time-- + '秒';
+            }
+        }, 1000);
+        console.log('发送短信中')
+    })
+</script>
+</body>
+</html>
