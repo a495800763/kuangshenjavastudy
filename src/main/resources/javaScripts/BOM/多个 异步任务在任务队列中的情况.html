@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(1);
+    //响应型异步任务必须有响应操作才被加入任务队列
+    document.onclick=function () {
+        console.log('click');
+    }
+    console.log(2);
+    //setTimeout的异步任务直接被加入到任务队列
+    setTimeout(function () {
+        console.log(3)
+    },3000)
+</script>
+</body>
+</html>
