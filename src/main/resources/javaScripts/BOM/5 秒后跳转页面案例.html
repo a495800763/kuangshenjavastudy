@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击</button>
+<span></span>
+<script>
+    var btn = document.querySelector('button');
+    var span = document.querySelector('span');
+    var start = 5;
+    btn.addEventListener('click', function () {
+        var internalId = window.setInterval(function () {
+            span.innerHTML = (--start)+'秒后跳转';
+        }, 1000);
+
+        window.setTimeout(function () {
+            window.clearInterval(internalId);
+            start = 5;
+            span.innerHTML='';
+            window.location.href = 'http://www.baidu.com';
+        }, 5000)
+    })
+</script>
+</body>
+</html>
