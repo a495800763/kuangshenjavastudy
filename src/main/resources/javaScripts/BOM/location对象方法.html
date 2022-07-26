@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击跳转</button>
+<script>
+    var btn = document.querySelector('button');
+    btn.addEventListener('click',function () {
+        //记录浏览历史，可以后退到之前页面
+        //window.location.assign('http://www.bilibili.com');
+
+        //不记录浏览历史，不可以后退到之前页面
+       // window.location.replace('http://www.bilibili.com');
+
+        //相当于浏览器的刷新按钮
+        window.location.reload();
+    });
+
+</script>
+</body>
+</html>
