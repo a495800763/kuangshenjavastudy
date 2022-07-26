@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .father{
+            position: relative;
+            width: 200px;
+            height:200px;
+            background-color: pink;
+            margin: 100px;
+        }
+        .son{
+            width: 100px;
+            height:100px;
+            background-color: skyblue;
+            margin: 45px;
+        }
+        .w{
+            width: 200px;
+            height:200px;
+            background-color: greenyellow;
+            margin: 0 auto 200px;
+            padding: 10px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<div class="w"></div>
+<script>
+    //offset系列
+    var father = document.querySelector('.father');
+    var son = document.querySelector('.son')
+    console.log(father.offsetTop);
+    console.log(father.offsetLeft);
+    //offset的基准为该元素的上级中第一个有定位的节点，如果没有父节点或者父节点都没有定位，以body为准
+    //即此处son.offsetLeft的值为son相对body 的offset值为145 ，而不是其相对father的offset：45
+    //如果father的css中有position：relative 则此处返回的值为45
+    console.log(son.offsetLeft);
+
+    var w = document.querySelector('.w');
+    //可以动态的得到当前元素的width 和height ,包含padding+border+(width或height)
+    console.log(w.offsetWidth);
+    console.log(w.offsetHeight);
+    //返回带有定位的father ，否则返回body
+    console.log(son.offsetParent);
+    console.log(w.offsetParent);
+</script>
+</body>
+</html>
