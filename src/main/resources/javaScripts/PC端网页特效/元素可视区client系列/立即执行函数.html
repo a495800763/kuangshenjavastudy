@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    //立即实行函数：不需要调用，直接会执行的函数
+    //一般函数
+    function fn(){
+        console.log(1);
+    }
 
+    //立即执行函数的两种写法
+    //  (function (){})()  或者 (funtion(){}());
+    //第一种方法很好理解，将function(){} 看成是定义了一个匿名函数，在外层的(),则是直接调用
+    //第二只用方式也是直接调用，在外层再套一层括号形成一个整体
+    //且可以定义参数并传参。类似下式
+    (function (param1,param2){
+        console.log(2)
+        console.log(param1);
+        console.log(param2);
+    })('我是帅哥','你好');
+</script>
 </body>
 </html>
