@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    //client 理解： 可视区： 即clientHeight 和clientWidth 都不包含边框
+    //使用 clientTop和clientLeft 单独获取边框
+    var div = document.querySelector('div');
+    //clientLeft 左边框的大小  10，不含单位
+    console.log(div.clientLeft);
+    //clientHeight 包含padding 内容区的大小 不含边框，不带单位 230
+    console.log(div.clientHeight);
+</script>
+</body>
+</html>
