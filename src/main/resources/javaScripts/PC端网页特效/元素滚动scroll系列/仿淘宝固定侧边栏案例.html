@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .main{
+            height:1000px;
+            background-color: yellowgreen;
+        }
+        .w{
+
+        }
+        .banner{
+            height:500px;
+            background-color: skyblue;
+        }
+        .header{
+            height:200px;
+            background-color: pink;
+        }
+
+        span{
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-
+<div class="slider-bar">
+    <span class="goBack">返回顶部</span>
+</div>
+<div class="header w">头部区域</div>
+<div class="banner w">banner区域</div>
+<div class="main w">主体部分</div>
+<script>
+    //1 获取元素
+    var sliderbar= document.querySelector('.slider-bar');
+    var banner = document.querySelector('.banner');
+    //2 页面滚动事件
+    document.addEventListener('scroll',function () {
+        //打印页面被scroll 的头部
+        console.log(window.pageYOffset);
+        //当window.pageYOffset 的值大于等于header的height即banner.offsetTop，侧边栏改成固定定位显式出来
+        if(window.pageYOffset>=banner.offsetTop){
+            sliderbar.style.position='fixed';
+        }else{
+            sliderbar.style.position='absolute';
+        }
+    })
+</script>
 </body>
 </html>
