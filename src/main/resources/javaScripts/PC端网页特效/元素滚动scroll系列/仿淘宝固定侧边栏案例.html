@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .main{
-            height:1000px;
+        .main {
+            height: 1000px;
             background-color: yellowgreen;
         }
-        .w{
+
+        .w {
 
         }
-        .banner{
-            height:500px;
+
+        .banner {
+            height: 500px;
             background-color: skyblue;
         }
-        .header{
-            height:200px;
+
+        .header {
+            height: 200px;
             background-color: pink;
         }
 
-        span{
+        span {
             display: none;
             position: absolute;
             bottom: 0;
@@ -36,17 +39,31 @@
 <div class="main w">主体部分</div>
 <script>
     //1 获取元素
-    var sliderbar= document.querySelector('.slider-bar');
+    var sliderbar = document.querySelector('.slider-bar');
     var banner = document.querySelector('.banner');
+    var main = document.querySelector('.main');
+    var goback = document.querySelector('.goBack');
+    var bannerTop = banner.offsetTop;
+    var sliderbarTop = sliderbar.offsetTop - bannerTop;
+    var mainTop = main.offsetTop;
     //2 页面滚动事件
-    document.addEventListener('scroll',function () {
+    document.addEventListener('scroll', function () {
         //打印页面被scroll 的头部
         console.log(window.pageYOffset);
         //当window.pageYOffset 的值大于等于header的height即banner.offsetTop，侧边栏改成固定定位显式出来
-        if(window.pageYOffset>=banner.offsetTop){
-            sliderbar.style.position='fixed';
-        }else{
-            sliderbar.style.position='absolute';
+        if (window.pageYOffset >= bannerTop) {
+            sliderbar.style.position = 'fixed';
+            //将侧边栏与banner对齐
+            sliderbar.style.top=sliderbarTop+'px';
+        } else {
+            sliderbar.style.position = 'absolute';
+            sliderbar.style.top=300+'px';
+        }
+
+        if (window.pageYOffset >= mainTop) {
+           goback.style.display='block';
+        } else {
+            goback.style.display='none';
         }
     })
 </script>
