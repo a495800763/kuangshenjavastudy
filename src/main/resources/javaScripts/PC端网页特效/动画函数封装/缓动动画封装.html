@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one {
+            position: absolute;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .two {
+            position: absolute;
+            top: 150px;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--缓动动画步长公式： 当前步长=（目标位置-当前位置）/ 份数（自定义份数）-->
+<!--换句话说：距离越远，速度越快，越靠近目标，速度越慢，谓之缓动-->
+<button class="btn500">点击移动到500</button>
+<button class="btn800">点击移动到800</button>
+<button class="btn0">点击移动到0</button>
+
+<div>
+    <div class="one"></div>
+</div>
+
+<div>
+    <div class="two"></div>
+</div>
+
+<script>
+    //动画函数
+    function animation(obj, target) {
+        //先清除之前的定时器，再开启定时器，同一时间只有一个定时器在移动obj，解决重复点按btn,obj移动速度加快的bug
+        clearInterval(obj.timer);
+        //注意这种写法，将定时器id写在obj中，作为其属性，利用已经开辟的obj对象的空间，而不是单独开辟储存id的空间
+        obj.timer = window.setInterval(function () {
+            // 获取元素当前位置
+            var currentleft = obj.offsetLeft;
+            //每次移动距离（速度）慢慢变小,step 当前移动距离(速度)
+            //当前步长=（目标位置-当前位置）/ 份数（自定义份数）
+            //var step = 1;
+            //份数越大移动越快，太快的话看不出速度逐渐减小的平滑减速过程，份数越小移动越慢，越平缓，太平缓太慢
+            // 因此份数一般定义成10
+            //步长值往上取整，避免小数，避免回退
+            //【下式支持负数步长，即回退】
+            // var step = Math.ceil((target - obj.offsetLeft) / 10);
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            obj.style.left = (currentleft + step) + 'px';
+            // if (Number(currentleft) >= target) {
+            //     window.clearInterval(obj.timer);
+            // }
+        }, 15)
+    }
+
+
+    var one = document.querySelector('.one');
+    var two = document.querySelector('.two');
+    var btn500 = document.querySelector('.btn500');
+    var btn800 = document.querySelector('.btn800');
+    var btn0 = document.querySelector('.btn0');
+    btn500.addEventListener('click', function () {
+        animation(one, 500);
+        animation(two, 500);
+    });
+    btn800.addEventListener('click', function () {
+        animation(one, 800);
+        animation(two, 800);
+    });
+    btn0.addEventListener('click', function () {
+        animation(one, 0);
+        animation(two, 0);
+    });
+</script>
+</body>
+</html>
