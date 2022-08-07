@@ -14,7 +14,7 @@
 
         .two {
             position: absolute;
-            top: 400px;
+            top: 150px;
             left: 0px;
             width: 100px;
             height: 100px;
@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+<button>点击开始移动</button>
 <div>
     <div class="one"></div>
 </div>
@@ -34,12 +35,15 @@
 <script>
     //动画函数
     function animation(obj, target) {
-        var id = window.setInterval(function () {
+        //先清除之前的定时器，再开启定时器，同一时间只有一个定时器在移动obj，解决重复点按btn,obj移动速度加快的bug
+        clearInterval(obj.timer);
+        //注意这种写法，将定时器id写在obj中，作为其属性，利用已经开辟的obj对象的空间，而不是单独开辟储存id的空间
+        obj.timer = window.setInterval(function () {
             // 获取元素当前位置
             var currentleft = obj.offsetLeft;
             obj.style.left = (currentleft + 1) + 'px';
             if (Number(currentleft) >= target) {
-                window.clearInterval(id);
+                window.clearInterval(obj.timer);
             }
         }, 30)
     }
@@ -47,8 +51,11 @@
 
     var one = document.querySelector('.one');
     var two = document.querySelector('.two');
-    animation(one, 300);
-    animation(two, 400);
+    var btn = document.querySelector('button');
+    btn.addEventListener('click',function () {
+        animation(one, 300);
+        animation(two, 400);
+    });
 </script>
 </body>
 </html>
