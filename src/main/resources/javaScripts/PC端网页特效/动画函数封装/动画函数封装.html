@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one {
+            position: absolute;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .two {
+            position: absolute;
+            top: 400px;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="one"></div>
+</div>
+
+<div>
+    <div class="two"></div>
+</div>
+
+<script>
+    //动画函数
+    function animation(obj, target) {
+        var id = window.setInterval(function () {
+            // 获取元素当前位置
+            var currentleft = obj.offsetLeft;
+            obj.style.left = (currentleft + 1) + 'px';
+            if (Number(currentleft) >= target) {
+                window.clearInterval(id);
+            }
+        }, 30)
+    }
+
+
+    var one = document.querySelector('.one');
+    var two = document.querySelector('.two');
+    animation(one, 300);
+    animation(two, 400);
+</script>
+</body>
+</html>
