@@ -39,7 +39,7 @@
 
 <script>
     //动画函数
-    function animation(obj, target) {
+    function animation(obj, target,callback) {
         //先清除之前的定时器，再开启定时器，同一时间只有一个定时器在移动obj，解决重复点按btn,obj移动速度加快的bug
         clearInterval(obj.timer);
         //注意这种写法，将定时器id写在obj中，作为其属性，利用已经开辟的obj对象的空间，而不是单独开辟储存id的空间
@@ -56,10 +56,13 @@
             // var step = Math.ceil((target - obj.offsetLeft) / 10);
             var step = (target - obj.offsetLeft) / 10;
             step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            if(obj.offsetLeft==target){
+                //定时器关闭时，执行回调函数
+                callback();
+                clearInterval(obj.timer);
+            }
             obj.style.left = (currentleft + step) + 'px';
-            // if (Number(currentleft) >= target) {
-            //     window.clearInterval(obj.timer);
-            // }
+
         }, 15)
     }
 
@@ -70,17 +73,21 @@
     var btn800 = document.querySelector('.btn800');
     var btn0 = document.querySelector('.btn0');
     btn500.addEventListener('click', function () {
-        animation(one, 500);
-        animation(two, 500);
+        animation(one, 500,changeColor);
+        animation(two, 500,changeColor);
     });
     btn800.addEventListener('click', function () {
-        animation(one, 800);
-        animation(two, 800);
+        animation(one, 800,changeColor);
+        animation(two, 800,changeColor);
     });
     btn0.addEventListener('click', function () {
-        animation(one, 0);
-        animation(two, 0);
+        animation(one, 0,changeColor);
+        animation(two, 0,changeColor);
     });
+
+    function changeColor(){
+         console.log('到了')
+    }
 </script>
 </body>
 </html>
