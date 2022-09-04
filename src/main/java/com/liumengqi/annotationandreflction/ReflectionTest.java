@@ -23,6 +23,10 @@ public class ReflectionTest {
         ClassLoader classLoader = c5.getClassLoader();
         System.out.println(classLoader);
 
+
+
+
+
         //Class 本身也是 一个Class 类的对象
         Class<? extends Class> c6 = c5.getClass();
         System.out.println(c6.hashCode());
