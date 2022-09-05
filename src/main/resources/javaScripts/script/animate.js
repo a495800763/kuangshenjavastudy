@@ -17,7 +17,9 @@ function animation(obj, target,callback) {
         step = step > 0 ? Math.ceil(step) : Math.floor(step);
         if(obj.offsetLeft==target){
             //定时器关闭时，执行回调函数
-            callback();
+            if(callback){
+                callback();
+            }
             clearInterval(obj.timer);
         }
         obj.style.left = (currentleft + step) + 'px';

@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .sliderbar{
-
+        .sliderbar {
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #fff;
         }
 
-        .con{
-
+        .con {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 40px;
+            background-color: purple;
+            z-index: -1;
         }
     </style>
+    <script src="../../script/animate.js"></script>
 </head>
 <body>
 <div class="sliderbar">
@@ -22,10 +37,14 @@
     var sliderbar=  document.querySelector('.sliderbar');
     var con = document.querySelector('.con');
     sliderbar.addEventListener('mouseenter',function () {
-        animate(con,-160);
+        animation(con,-160,function () {
+            sliderbar.children[0].innerText='→';
+        });
     })
     sliderbar.addEventListener('mouseleave',function () {
-        animate(con,0);
+        animation(con,0,function () {
+            sliderbar.children[0].innerText='←';
+        });
     })
 </script>
 </body>
