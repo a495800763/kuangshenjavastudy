@@ -18,11 +18,15 @@ window.addEventListener('load', function () {
         //鼠标经过显示左右按钮
         arrow_l.style.display = 'block';
         arrow_r.style.display = 'block';
+        window.clearInterval(intervalId)
     })
     focus.addEventListener('mouseleave', function () {
         //鼠标经过显示左右按钮
         arrow_l.style.display = 'none';
         arrow_r.style.display = 'none';
+        intervalId = setInterval(function () {
+            arrow_r.click();
+        },2000)
     })
     //3 动态生成小圆圈，数目与图片数量一致
     var ul = focus.querySelector('ul');
@@ -95,4 +99,7 @@ window.addEventListener('load', function () {
 
     });
 
+   var intervalId =  window.setInterval(function () {
+        arrow_r.click();
+    },2000)
 })
