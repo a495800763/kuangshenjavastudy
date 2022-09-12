@@ -13,14 +13,24 @@ window.addEventListener('load', function () {
     var arrow_l = document.querySelector('.arrow-l');
     var arrow_r = document.querySelector('.arrow-r');
     var focus = document.querySelector('.focus');
-    focus.addEventListener('mouseenter',function () {
+    focus.addEventListener('mouseenter', function () {
         //鼠标经过显示左右按钮
-        arrow_l.style.display='block';
-        arrow_r.style.display='block';
+        arrow_l.style.display = 'block';
+        arrow_r.style.display = 'block';
     })
-    focus.addEventListener('mouseleave',function () {
+    focus.addEventListener('mouseleave', function () {
         //鼠标经过显示左右按钮
-        arrow_l.style.display='none';
-        arrow_r.style.display='none';
+        arrow_l.style.display = 'none';
+        arrow_r.style.display = 'none';
     })
+    //3 动态生成小圆圈，数目与图片数量一致
+    var ul = focus.querySelector('ul');
+    var ol = focus.querySelector('.circle');
+    // console.log(ul.children.length);
+    for (var i = 0; i < ul.children.length; i++) {
+        var li = document.createElement('li');
+        ol.appendChild(li);
+    }
+    //选中第一个li为current类型
+    ol.children[0].className = 'current';
 })
