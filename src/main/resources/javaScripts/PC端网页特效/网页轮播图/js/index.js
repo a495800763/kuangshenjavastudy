@@ -29,8 +29,16 @@ window.addEventListener('load', function () {
     // console.log(ul.children.length);
     for (var i = 0; i < ul.children.length; i++) {
         var li = document.createElement('li');
+        //小圆圈排他思想，注册每个小圆圈的点击事件
+        li.addEventListener('click',function () {
+            for(var i = 0;i<ol.children.length;i++){
+                ol.children[i].className='';
+            }
+            this.className ='current';
+        })
         ol.appendChild(li);
     }
     //选中第一个li为current类型
     ol.children[0].className = 'current';
+
 })
