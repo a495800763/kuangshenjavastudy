@@ -42,8 +42,8 @@ window.addEventListener('load', function () {
 
             //点击小圆圈后，拿到当前小圆圈的索引号
             var index = this.getAttribute('index');
-            console.log(focusWidth);
-            console.log(index);
+            currentIndex=index;
+            circle=index;
             animate(ul, -index * focusWidth)
         })
         ol.appendChild(li);
@@ -55,6 +55,8 @@ window.addEventListener('load', function () {
     ul.appendChild(firstClone);
     //6 点击左右侧按钮，图片滚动一张
     var currentIndex = 0;
+    var circle = 0;
+    //向右按钮
     arrow_r.addEventListener('click', function () {
         if (currentIndex == focus.children.length) {
             ul.style.left = 0 + 'px';
@@ -62,7 +64,16 @@ window.addEventListener('load', function () {
         }
         currentIndex++;
         animate(ul, -currentIndex * focusWidth);
+        circle++;
+        if (circle == 4) {
+            circle = 0;
+        }
+        for (var i = 0; i < ol.children.length; i++) {
+            ol.children[i].className = '';
+        }
+        ol.children[circle].className = 'current';
     });
+    //向左按钮
     arrow_l.addEventListener('click', function () {
         if (currentIndex == 0) {
             ul.style.left = -(focus.children.length * focusWidth) + 'px';
@@ -70,6 +81,18 @@ window.addEventListener('load', function () {
         }
         currentIndex--;
         animate(ul, -currentIndex * focusWidth);
+        circle--;
+        if(circle<0){
+            circle=3;
+        }
+        for (var i = 0; i < ol.children.length; i++) {
+            ol.children[i].className = '';
+        }
+        ol.children[circle].className = 'current';
+        if (circle == 0) {
+            circle = 4;
+        }
+
     });
 
 })
