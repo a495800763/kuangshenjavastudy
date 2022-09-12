@@ -13,6 +13,7 @@ window.addEventListener('load', function () {
     var arrow_l = document.querySelector('.arrow-l');
     var arrow_r = document.querySelector('.arrow-r');
     var focus = document.querySelector('.focus');
+    var focusWidth = focus.offsetWidth;
     focus.addEventListener('mouseenter', function () {
         //鼠标经过显示左右按钮
         arrow_l.style.display = 'block';
@@ -30,24 +31,45 @@ window.addEventListener('load', function () {
     for (var i = 0; i < ul.children.length; i++) {
         var li = document.createElement('li');
         //通过自定义属性记录当前小圆圈的索引号
-        li.setAttribute('index',i);
+        li.setAttribute('index', i);
         //小圆圈排他思想，注册每个小圆圈的点击事件
-        li.addEventListener('click',function () {
-            for(var i = 0;i<ol.children.length;i++){
-                ol.children[i].className='';
+        li.addEventListener('click', function () {
+            for (var i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = '';
             }
-            this.className ='current';
+            this.className = 'current';
             //点击小圆圈，移动ul
-            var focusWidth = focus.offsetWidth;
+
             //点击小圆圈后，拿到当前小圆圈的索引号
             var index = this.getAttribute('index');
             console.log(focusWidth);
             console.log(index);
-            animate(ul,-index*focusWidth)
+            animate(ul, -index * focusWidth)
         })
         ol.appendChild(li);
     }
     //选中第一个li为current类型
     ol.children[0].className = 'current';
+    // 克隆第一张图片放到最后,深克隆
+    var firstClone = ul.children[0].cloneNode(true);
+    ul.appendChild(firstClone);
+    //6 点击左右侧按钮，图片滚动一张
+    var currentIndex = 0;
+    arrow_r.addEventListener('click', function () {
+        if (currentIndex == focus.children.length) {
+            ul.style.left = 0 + 'px';
+            currentIndex = 0;
+        }
+        currentIndex++;
+        animate(ul, -currentIndex * focusWidth);
+    });
+    arrow_l.addEventListener('click', function () {
+        if (currentIndex == 0) {
+            ul.style.left = -(focus.children.length * focusWidth) + 'px';
+            currentIndex = 4;
+        }
+        currentIndex--;
+        animate(ul, -currentIndex * focusWidth);
+    });
 
 })
