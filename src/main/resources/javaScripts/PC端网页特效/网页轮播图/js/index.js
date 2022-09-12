@@ -29,12 +29,21 @@ window.addEventListener('load', function () {
     // console.log(ul.children.length);
     for (var i = 0; i < ul.children.length; i++) {
         var li = document.createElement('li');
+        //通过自定义属性记录当前小圆圈的索引号
+        li.setAttribute('index',i);
         //小圆圈排他思想，注册每个小圆圈的点击事件
         li.addEventListener('click',function () {
             for(var i = 0;i<ol.children.length;i++){
                 ol.children[i].className='';
             }
             this.className ='current';
+            //点击小圆圈，移动ul
+            var focusWidth = focus.offsetWidth;
+            //点击小圆圈后，拿到当前小圆圈的索引号
+            var index = this.getAttribute('index');
+            console.log(focusWidth);
+            console.log(index);
+            animate(ul,-index*focusWidth)
         })
         ol.appendChild(li);
     }

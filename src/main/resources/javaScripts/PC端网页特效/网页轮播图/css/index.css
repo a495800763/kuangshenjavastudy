@@ -16,7 +16,7 @@
 }
 
 .focus ul {
-    position: absolute;
+    position: absolute;/*添加了绝对定位之后才能使用动画函数animate*/
     top: 0;
     left: 0;
     width: 600%;
