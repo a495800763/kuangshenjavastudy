@@ -9,5 +9,8 @@
         <module name="kuangshenjavastudy" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kuangshenjavastudy" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
